@@ -15,15 +15,12 @@ const page = () => {
     const {id} = useParams()
     const {data : course ,isLoading, error} = useGetCourseQuery(id)
     const [enroledCourse] = useEnrolledCourseMutation()
-    console.log('dataaa',course)
-    const [currentClass , setCurrentClass] = useState('')
     const { user } = useFirebase();
     const router = useRouter()
     
     const isExistCourse = {userId : user, courseId : id}
     const {data : isEnrolled} = useGetSingleEnrolledQuery(isExistCourse)
     
-
     const addEnrolled =async (id,coursePrice) =>{
         if(isEnrolled){
             return Swal.fire({
@@ -43,10 +40,8 @@ const page = () => {
             email : user,
             price : coursePrice
         }
-        console.log('enroled info',enrolledInfo)
         try {
             const resp = await enroledCourse(enrolledInfo);
-            console.log(resp)
             Swal.fire({
                 position: "top-end",
                 icon: "success",

@@ -27,7 +27,6 @@ const page = () => {
     const likeObject ={lessonId : currentClass?.cLessonId, userId : currentUser?._id}
     
     const {data  } = useGetLikeQuery(likeObject)
-    console.log(course)
 
     const addLikes =async ()=>{
         const newLike = {
@@ -36,7 +35,6 @@ const page = () => {
         }
         try {
             const resp = await addLike(newLike);
-            console.log('likes',resp)
         } catch (err) {
             console.log(err)
         }
@@ -48,7 +46,6 @@ const page = () => {
             userId : currentUser?._id
         }
         try {
-            const resp = await removeLike(newLike);
             console.log('likes',resp)
         } catch (err) {
             console.log(err)
@@ -64,7 +61,6 @@ const page = () => {
         }
         try {
             const resp = await addComment(newComment);
-            console.log(resp)
             e.target.reset()
             Swal.fire({
                 position: "top-end",

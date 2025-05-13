@@ -28,7 +28,6 @@ const page = () => {
              }
             createUser(email,password)
             .then(res =>{
-                console.log('resss', res)
                 setdisable(false)
                 dispatch(addUser(newUser))
                 router.push('/')

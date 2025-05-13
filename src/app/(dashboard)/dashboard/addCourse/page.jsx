@@ -5,10 +5,6 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 
 const Page = () => {
-    // const [title, setTitle] = useState('');
-    // const [description, setDescription] = useState('');
-    // const [thumbnail, setThumbnail] = useState(null);
-    // const [category, setCategory] = useState('');
     const inStyle = 'py-2 px-3 rounded-md border focus:border focus:border-sky-300 focus:outline-0 flex-grow border-gray-400 text-gray-900';
 
     const [lesson, setLesson] = useState([{ video : "", title : "", id : 0}])
@@ -27,7 +23,6 @@ const Page = () => {
       console.log(courseInfo)
       try {
           const resp = await addCourse(courseInfo);
-          console.log(resp)
           e.target.reset()
           Swal.fire({
               position: "top-end",
@@ -42,10 +37,9 @@ const Page = () => {
       }
     }
     const handleDelete = (id)=>{
-        console.log(id)
+        // console.log(id)
         const lessons = [...lesson];
         const newlessons = lessons.filter(cId => cId.id !== id)
-        console.log(newlessons)
         setLesson(newlessons)
     }
 

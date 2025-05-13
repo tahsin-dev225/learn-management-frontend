@@ -14,7 +14,6 @@ const page = () => {
     const {user} = useFirebase();
     // const isUser = logUser(user)
     const {data :courses, isLoading} = useGetEnrolledCourseQuery(user)
-    console.log('dataaaa', courses,'use',user)
     if(isLoading){
         return <div className="flex justify-center items-center w-full min-h-screen">Loading....</div>
     }

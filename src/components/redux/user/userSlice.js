@@ -13,7 +13,6 @@ export const addUser = createAsyncThunk("addUser", async(newUser,{rejectWithValu
 })
 
 export const logUser = createAsyncThunk("logUser", async(email,{rejectWithValue})=>{
-    console.log(email,'kod')
     try {
         const resp = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/users/${email}` , {withCredentials : true} )
         return resp.data;

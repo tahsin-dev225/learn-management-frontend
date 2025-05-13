@@ -8,7 +8,6 @@ import { useParams } from 'next/navigation';
 import { useState } from 'react';
 import { AiOutlineLike, AiTwotoneLike } from 'react-icons/ai';
 import { BiDislike, BiSolidDislike } from 'react-icons/bi';
-import { FaBox } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { FaTelegramPlane } from "react-icons/fa";
 
@@ -18,8 +17,6 @@ const VideoPage = () => {
     const {data : currentLesson } = useGetLessonQuery(video)
 
     const {data : course ,isLoading, error} = useGetCourseQuery(id)
-    const [currentClass , setCurrentClass] = useState('')
-    const [currentLikes , setCurrentLikes] = useState('')
     const [addComment] = useAddCommentMutation()
     const {data : comments ,isLoading : comLoading } = useGetCommentQuery(video || '')
     const [addLike] = useAddLikeMutation()
@@ -28,7 +25,7 @@ const VideoPage = () => {
     const [removeDislike] = useRemoveDislikeMutation()
     const currentUser = useSelector(state => state?.userReducer?.userInfo)
     
-    const {data : allLIkes ,isFetching} = useGetAllLikeQuery(video)
+    const {data : allLIkes } = useGetAllLikeQuery(video)
     const {data : allDislikes} = useGetAllDislikeQuery(video)
     const likeObject ={lessonId : video, userId : currentUser?._id}
     
@@ -42,7 +39,6 @@ const VideoPage = () => {
         }
         try {
             const resp = await addLike(newLike);
-            console.log('likes',resp)
         } catch (err) {
             console.log(err)
         }
@@ -55,7 +51,6 @@ const VideoPage = () => {
         }
         try {
             const resp = await removeLike(newLike);
-            console.log('likes',resp)
         } catch (err) {
             console.log(err)
         }
@@ -68,7 +63,6 @@ const VideoPage = () => {
         }
         try {
             const resp = await addDislike(newLike);
-            console.log('likes',resp)
         } catch (err) {
             console.log(err)
         }
@@ -81,7 +75,7 @@ const VideoPage = () => {
         }
         try {
             const resp = await removeDislike(newLike);
-            console.log('likes',resp)
+            // console.log('likes',resp)
         } catch (err) {
             console.log(err)
         }
@@ -210,11 +204,8 @@ const VideoPage = () => {
                             referrerPolicy="strict-origin-when-cross-origin"
                             allowFullScreen
                             ></iframe>
-                            
                             <h1 className="lg:text-lg line-clamp-2 mt-1">{lesson?.title}</h1>
-
                             <div className="absolute z-10 w-full h-full bg-amber-300/5"></div>
-
                         </Link>
                     )
                     }

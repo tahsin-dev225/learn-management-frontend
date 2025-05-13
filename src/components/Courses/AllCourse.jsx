@@ -8,7 +8,6 @@ import SingleCourse from "./Course";
 
 const AllCourse = () => {
     const {data} = useGetAllCourseQuery()
-    console.log(data)
 
     const courses = [
         {

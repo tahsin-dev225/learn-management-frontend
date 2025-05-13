@@ -12,9 +12,7 @@ import useFirebase from '../Firebase/useFirebase';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
     const {user} = useFirebase()
-    console.log('usreseere',user)
     const {logOut} = useFirebase()
-
 
     const toggleDrawer = () => {
         setIsOpen((prevState) => !prevState)

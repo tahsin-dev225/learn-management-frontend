@@ -167,29 +167,3 @@ export const {
     useRemoveDislikeMutation
 } = courseApi
 
-
-
-
-// import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query"
-
-// export const CourseApi = createApi({ 
-//     reducerPath : 'courseApi',
-//     baseQuery : fetchBaseQuery({baseUrl : process.env.NEXT_PUBLIC_BASE_URL }),
-//     endpoints : builder =>({
-//         getCourse : builder.query({
-//             query : () =>({
-//                 url : 'course',
-//                 method : 'GET',
-//             })
-//         }),
-//         addCourse : builder.mutation({
-//             query : data =>({
-//                 url : `course`,
-//                 method : 'POST',
-//                 body : data
-//             })
-//         })
-//     })
-// })
-
-// export const {useGetCourseQuery, useAddCourseMutation } = CourseApi
