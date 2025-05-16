@@ -4,15 +4,20 @@ import { useGetAllCourseQuery } from '../redux/course/courseApi';
 import Image from 'next/image';
 import { BookOpen, ChevronRight } from 'lucide-react';
 import SingleCourse from '../Courses/Course';
+import { Skeleton } from 'antd';
 
 // 6811bdddad86b22adeb3cf54
 
 const CourseSection = () => {
-    const {data} = useGetAllCourseQuery()
+    const {data ,isLoading} = useGetAllCourseQuery()
+
+    if(isLoading){
+      return <Skeleton active />
+    }
     
       return (
         <section className="py-12 bg-gray-200">
-          <div className="max-w-7xl mx-auto px-6 text-">
+          <div className="max-w-[1500px] mx-auto px-6 text-">
             <h2 className="text-5xl mx-auto text-center font-bold text-gray-800 mb-4">Explore Our Courses</h2>
             <p className="text-gray-600 text-center mb-10 mx-auto ">Choose from a variety of high-quality courses to enhance your skills.</p>
 

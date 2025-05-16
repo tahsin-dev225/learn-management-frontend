@@ -7,14 +7,16 @@ import { useEffect } from "react";
 const StudentRoute = ({role,children}) => {
     const {user} = useFirebase()
     const dispatch = useDispatch();
-    
+   
+    useEffect(()=>{
+        if(user){
+            dispatch(logUser(user))
+        }
+    },[user])
+ 
     const isStudent = useSelector(state => state?.userReducer?.userInfo)
     // console.log('stish', isStudent)
     const isMatched = role.includes(isStudent?.role)
-
-    useEffect(()=>{
-        dispatch(logUser(user))
-    },[user])
 
     if(isMatched === true){
         return <div className="w-full ">

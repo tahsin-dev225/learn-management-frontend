@@ -12,6 +12,9 @@ const Page = () => {
     const [addCourse] = useAddCourseMutation()
     const currentUser = useSelector(state => state?.userReducer?.userInfo);
 
+
+    console.log('paichi',currentUser)
+
     const createCourse = async (e) =>{
       e.preventDefault()
       const courseInfo ={

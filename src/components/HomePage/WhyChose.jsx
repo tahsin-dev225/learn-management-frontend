@@ -5,7 +5,7 @@ import React from 'react';
 const WhyChose = () => {
     return (
         <section className="w-full py-12 md:py-24">
-          <div className="container lg:w-[92%] mx-auto px-4 md:px-6">
+          <div className="max-w-[1600px] lg:w-[92%] mx-auto px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="mx-auto lg:mr-auto flex items-center justify-center">
                 <Image

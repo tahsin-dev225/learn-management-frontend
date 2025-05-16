@@ -9,19 +9,19 @@ import Link from "next/link";
 
 
 const Topbar = () => {
-    const {user} = useFirebase()
-    const dispatch = useDispatch();
-    const isStudent = useSelector(state => state?.userReducer?.userInfo)
+    // const {user} = useFirebase()
+    // const dispatch = useDispatch();
+    // const isStudent = useSelector(state => state?.userReducer?.userInfo)
 
-    useEffect(() => {
-    if(user){
-        dispatch(logUser(user))
-    }
-    }, [user]);
+    // useEffect(() => {
+    // if(user){
+    //     dispatch(logUser(user))
+    // }
+    // }, [user]);
 
     return (
         <div className="flex flex-col md:flex-row items-center justify-between bg-[#124249] text-white max-h-[200px] px-6 md:px-20 py-3">
-            <div className="flex items-center gap-6">
+            {/* <div className="flex items-center gap-6">
                 <div className="rounded-full border-slate-400 size-12 lg:size-16 flex justify-center items-center p- border-[1px] ">
                     {
                         isStudent?.image ?<Image src="/img/coursPerson.png" alt="Profile" width={50} height={30} className="object-cover" />
@@ -39,20 +39,20 @@ const Topbar = () => {
                         <FaFacebook className="hover:text-blue-400 cursor-pointer" />
                     </div>
                 </div>
-            </div>
+            </div> */}
             {/* {
                 isStudent?.role === "student" && 
                 <div className={``}>
                     <h1 className="text-lg font-medium text-indigo-300 "></h1>
                 </div>
             } */}
-            <div className="hidden lg:flex mt-6 md:mt-0">
+            {/* <div className="hidden lg:flex mt-6 md:mt-0">
                 {
                    isStudent?.role === "teacher" ? <button className="bg-blue-500 hover:bg-blue-600 text-white px-3.5 md:px-6 py-1.5 md:py-2 rounded-lg md:font-normal shadow">
                     ADD A COURSE
                 </button> : <Link className="bg-blue-500 hover:bg-blue-600 text-white px-3.5 md:px-6 py-1.5 md:py-2 rounded-lg md:font-normal shadow" href={'/courses'}>Enrolle course</Link>
                 }
-            </div>
+            </div> */}
         </div>
     );
 };

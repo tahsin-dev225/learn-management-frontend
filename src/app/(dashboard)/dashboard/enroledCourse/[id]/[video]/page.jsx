@@ -196,7 +196,7 @@ const VideoPage = () => {
                         <p className="text-gray-300 font-medium text-[15px]">{course?.lessonIds.length} Lessons</p>
                     </div>
                     {
-                    course?.lessonIds?.map((lesson,idx) => <Link href={`/dashboard/enroledCourse/${id}/${lesson?._id }`} 
+                    course?.lessonIds?.map((lesson,idx) => <Link key={idx} href={`/dashboard/enroledCourse/${id}/${lesson?._id }`} 
                         className="flex gap-2 my-2 p-1 cursor-pointer bg-[#dfd3d3] mx-1 rounded-md relative justify-start px-3 ">
                             <iframe width="160" height="75" src={lesson?.video}
                             title="YouTube video player" frameBorder="0"

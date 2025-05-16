@@ -19,7 +19,9 @@ const Navbar = () => {
     const isStudent = useSelector(state => state?.userReducer?.userInfo)
 
     useEffect(()=>{
-        dispatch(logUser(user))
+        if(user){
+            dispatch(logUser(user))
+        }
     },[user])
 
     const toggleDrawer = () => {

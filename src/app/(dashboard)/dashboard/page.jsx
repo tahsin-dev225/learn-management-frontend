@@ -17,7 +17,9 @@ const page = () => {
     console.log(courses)
 
     useEffect(()=>{
-        dispatch(logUser(user))
+        if(user){
+            dispatch(logUser(user))
+        }
     },[user])
 
     if(isLoading){

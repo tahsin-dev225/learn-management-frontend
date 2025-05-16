@@ -35,13 +35,13 @@ const AllCourse = () => {
 
     return (
         <section className="py-10 lg:my-6 pb-16 bg-gray-100">
-          <div className="max-w-7xl mx-auto px-6 text-">
+          <div className="max-w-[1500px] mx-auto px-6 lg:w-[90%]">
             <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-900 via-purple-500 to-pink-600 text-transparent bg-clip-text flex gap-5 items-center  mb-2">
               <FaBoxOpen className="text-blue-600" /> <span className="lg:text-[52px]"> Explore Our Courses</span>
             </h2>
             <p className="text-gray-600 mb-12">Choose from a variety of high-quality courses to enhance your skills.</p>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {data?.map((course) => (
                 <SingleCourse key={course?._id} course={course}></SingleCourse>
               ))}

@@ -4,77 +4,16 @@ import { useAddCommentMutation, useAddLikeMutation, useGetAllLikeQuery, useGetCo
 
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { FaBox } from "react-icons/fa";
 import {  useSelector } from "react-redux";
-import { AiOutlineLike, AiTwotoneLike } from "react-icons/ai";
-import Swal from "sweetalert2";
-import { BiDislike } from "react-icons/bi";
 import Link from "next/link";
 
 const page = () => {
     const {id} = useParams()
-    const [currentClass , setCurrentClass] = useState('')
-    const [currentLikes , setCurrentLikes] = useState('')
     const {data : course ,isLoading, error} = useGetCourseQuery(id)
-    const [addComment] = useAddCommentMutation()
-    const {data : comments ,isLoading : comLoading } = useGetCommentQuery(currentClass?.cLessonId || '')
-    const [addLike] = useAddLikeMutation()
-    const [removeLike] = useRemoveLikeMutation()
     const currentUser = useSelector(state => state?.userReducer?.userInfo)
     
-    const {data : allLIkes ,isFetching} = useGetAllLikeQuery(currentClass?.cLessonId)
-    const likeObject ={lessonId : currentClass?.cLessonId, userId : currentUser?._id}
     
-    const {data  } = useGetLikeQuery(likeObject)
-
-    const addLikes =async ()=>{
-        const newLike = {
-            lessonId : currentClass?.cLessonId,
-            userId : currentUser?._id
-        }
-        try {
-            const resp = await addLike(newLike);
-        } catch (err) {
-            console.log(err)
-        }
-    }
-
-    const removeLikes =async ()=>{
-        const newLike = {
-            lessonId : currentClass?.cLessonId,
-            userId : currentUser?._id
-        }
-        try {
-            console.log('likes',resp)
-        } catch (err) {
-            console.log(err)
-        }
-    }
-
-    const handleAddComment =async (e)=>{
-        e.preventDefault();
-        const newComment ={
-            text : e.target.comment.value,
-            userId : currentUser?._id,
-            lessonId : currentClass?.cLessonId
-        }
-        try {
-            const resp = await addComment(newComment);
-            e.target.reset()
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: `Comment added succesfully `,
-                showConfirmButton: false,
-                timer: 1500
-            });
-        } catch (err) {
-            console.log('error from create course', err)
-        }
-    }
-
-    if(isLoading || comLoading){
+    if(isLoading){
         return <div className="flex justify-center items-center w-full min-h-screen">Loading....</div>
     }
     if(error){

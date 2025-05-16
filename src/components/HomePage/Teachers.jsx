@@ -54,8 +54,8 @@ const Teachers = () => {
         },
     ]
     return (
-        <section className="w-full bg-gray-200 py-12 md:py-24 bg-muted/50">
-            <div className="container lg:w-[90%] mx-auto px-4 md:px-6">
+        <section className="w-full  bg-gray-200 py-12 md:py-24 bg-muted/50">
+            <div className=" lg:w-[90%] max-w-[1600px] mx-auto px-4 md:px-6">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2">
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Meet Our Top Teachers</h2>
