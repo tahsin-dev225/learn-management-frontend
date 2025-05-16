@@ -9,11 +9,12 @@ import { MdAddToPhotos } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import useFirebase from "../Firebase/useFirebase";
 import { logUser } from "../redux/user/userSlice";
+import Image from "next/image";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
-  const isOpenStyle = "px-2 rounded bg-indigo-800 my-2 py-1 pr-2 flex gap-2 items-center transition-all delay-200 font-medium hover:text-[17px]  font-mono"
-  const noOpen = "my-2  font-semibold text-2xl font-mono"
+  const isOpenStyle = "px-2 rounded bg-gray-100/20 text-gray-100 my-4 py-1 pr-2 flex gap-2 items-center transition-all delay-200 font-medium hover:text-[17px]  font-mono"
+  const noOpen = "my-1 px-2 font-semibold text-2xl font-mono"
 
   const pathName = usePathname();
   const {user} = useFirebase()
@@ -38,23 +39,28 @@ export default function Sidebar() {
   }, [user]);
 
   return (
-    <div className={`min-h-screen overflow-y-hidden bg-indigo-950  text-white ${isOpen ? "max-w-[300px] min-w-56 " : "w-min px-1.5"} transition-all duration-700 px-2 py5 flex flex-col`}>
-      <button
+    <div className={`lg:min-h-screen fixed bottom-0 w-full overflow-y-hidden lg:sticky bg-[#161A23]  text-white ${isOpen ? "lg:max-w-[250px] lg:min-w-60 " : "lg:w-min px-1.5"} transition-all duration-700  flex flex-col`}>
+      {/* <button
         className="mb-2 mt-2 justify-end p-1 text-xl focus:outline-none hidden md:flex"
         onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? "✖" : "☰"}
-      </button>
+      </button> */}
+      <div className="px-3 hidden lg:block border-b border-b-fuchsia-400/30 bg-[#3740563b] backdrop-blur-2xl py-4">
+        <Image src="/img/logo.png" height={50} width={150} alt="logo" />
+      </div>
       {
         isOpen 
       }
-      <Link href="/dashboard" className={ isOpen ? isOpenStyle : noOpen}><LuLayoutDashboard/><span className={isOpen ? '': 'hidden'}>Dashboard</span> </Link>
+      <div className="px-2.5 py-2.5 flex lg:flex-col flex-row justify-between">
+        <Link href="/dashboard" className={ isOpen ? isOpenStyle : noOpen}><LuLayoutDashboard/><span className={isOpen ? '': 'hidden'}>Dashboard</span> </Link>
 
-      {isStudent?.role === 'teacher' && <Link href="/dashboard/addCourse" className={isOpen ? isOpenStyle : noOpen }><MdAddToPhotos/><span className={isOpen ? '': 'hidden'}>Add Course</span> </Link>}
-      {isStudent?.role === 'student' && <Link href="/dashboard/enroledCourse" className={isOpen ? isOpenStyle : noOpen }><FaBoxOpen/><span className={isOpen ? '': 'hidden'}>Enrolled Course</span> </Link>}
+        {isStudent?.role === 'teacher' && <Link href="/dashboard/addCourse" className={isOpen ? isOpenStyle : noOpen }><MdAddToPhotos/><span className={isOpen ? '': 'hidden'}>Add Course</span> </Link>}
+        {isStudent?.role === 'student' && <Link href="/dashboard/enroledCourse" className={isOpen ? isOpenStyle : noOpen }><FaBoxOpen/><span className={isOpen ? '': 'hidden'}>Enrolled Course</span> </Link>}
 
-      <div className="divider-vertical w-[97%] h-[1px] bg-gray-400 my-6"></div>
+        <div className="divider-vertical hidden lg:block w-[97%] h-[1px] bg-gray-400 my-6"></div>
 
-      <Link href="/" className={ isOpen ?isOpenStyle : noOpen }><FaHome/><span className={isOpen ? '': 'hidden'}>Home</span> </Link>
+        <Link href="/" className={ isOpen ?isOpenStyle : noOpen }><FaHome/><span className={isOpen ? '': 'hidden'}>Home</span> </Link>
+      </div>
     </div>
   );
 }

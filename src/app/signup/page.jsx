@@ -45,11 +45,11 @@ const page = () => {
         }
 
     return (
-        <div className="w-full  bg-[#241a1a] text-[#e1ded3] relative h-screen mx-auto flex flex-col justify-center ">
-                <h1 className="text-3xl font-medium  mx-auto text-center">Sing-up as Student/Teacher.</h1>
-                <div className="w-[60%] mx-auto z-10">
-                    <div className="p-4 w-full px-8">
-                        <form onSubmit={handleSignup} className="w-[99%] md:w-[70%] lg:w-[75%] mx-auto ">
+        <div className="w-full overflow-hidden bg-[#241a1a] text-[#e1ded3] relative h-screen mx-auto flex flex-col justify-center ">
+                <h1 className="lg:text-3xl text-xl font-bold lg:font-medium  mx-auto text-center">Sing-up as Student/Teacher.</h1>
+                <div className="w-full overflow-hidden lg:w-[60%] mx-auto z-10">
+                    <div className="p-4 w-full px-2 md:px-8">
+                        <form onSubmit={handleSignup} className="w-[99%] overflow-hidden md:w-[70%] lg:w-[75%] mx-auto ">
                             <div className="my-4">
                                 <p className="my-1 text-[15px] mx-2 text-slate-600"> Name </p>
                                 <input type="text" name="name" className='w-full text-[13px] border border-slate-600 rounded-lg px-4 py-2 outline-none shadow-xl' placeholder='Enter your name...' />
@@ -74,9 +74,9 @@ const page = () => {
                         <div className="mx-auto my-3.5 text-center">Don't have account <Link href="/login" className='text-blue-400 font-semibold'>Login </Link>?</div>
                     </div>
                 </div>
-                <div className="opacity-75 absolute size-36 bg-blue-900 rounded-4xl blur-3xl top-[50%] drop-shadow-lg -z-0 left-9"></div>
-                <div className="opacity-35 absolute size-60 bg-blue-900 rounded-4xl blur-3xl top-[20%] drop-shadow-lg -z-0 left-[70%]"></div>
-                <div className="opacity-45 absolute size-36 bg-blue-900 rounded-4xl blur-3xl top-[80%] drop-shadow-lg -z-0 right-9"></div>
+                <div className="opacity-75 absolute size-16 lg:size-36 bg-blue-900 rounded-4xl blur-3xl lg:top-[50%] drop-shadow-lg -z-0 left-[20%] lg:left-[9%]"></div>
+                <div className="opacity-35 absolute size-24 lg:size-60 bg-blue-900 rounded-4xl blur-3xl lg:top-[20%] drop-shadow-lg -z-0 left-[20%] lg:left-[70%]"></div>
+                <div className="opacity-45 absolute size-16 lg:size-36 bg-blue-900 rounded-4xl blur-3xl lg:top-[80%] drop-shadow-lg -z-0 right-[20%] lg:right-[9%]"></div>
         </div>
     );
 };

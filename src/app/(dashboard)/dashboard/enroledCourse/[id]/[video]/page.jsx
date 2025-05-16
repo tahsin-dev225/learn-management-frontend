@@ -113,7 +113,7 @@ const VideoPage = () => {
 
 
     return (
-        <div className="p-1 lg:p-4 xl:max-w-[1100px] 2xl:max-w-[1460px] mx-auto"> 
+        <div className="p-1  lg:p-4 xl:max-w-[1100px] 2xl:max-w-[1460px] mx-auto"> 
             <div className=" flex justify-center flex-col xl:flex-row gap-3 md:gap-7 h-full  rounded-2xl">
                 <div className="w-full h-full">
                 <div className="relative w-full pt-[56.25%] shadow-lg">

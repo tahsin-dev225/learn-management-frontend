@@ -82,7 +82,7 @@ const page = () => {
     }
     
     return (
-        <div>
+        <div className="">
             <div className="p-1 lg:p-4 xl:max-w-[1100px] 2xl:max-w-[1460px] mx-auto">
                 <div className=" flex justify-center flex-col xl:flex-row gap-3 md:gap-7  rounded-2xl">
                     <div className="w-full">

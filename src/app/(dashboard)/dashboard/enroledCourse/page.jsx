@@ -19,7 +19,7 @@ const page = () => {
     }
     return (
         <StudentRoute role={"student"}>
-            <div>
+            <div className="">
                 {/* <div className="p-4 xl:max-w-[1000px] 2xl:max-w-[1200px] mx-auto">
                     <h2 className="text-4xl font-bold my-6">Enrolled Course Details.</h2>
                     <h2 className="text-xl font-medium mb-2 text-amber-200">You have enrolled {courses?.length} courses. </h2>
@@ -61,13 +61,13 @@ const page = () => {
                             <div className="md:flex">
                                 {/* Course Image - Larger on mobile, side column on desktop */}
                                 <div className="md:w-1/3 lg:w-1/4 relative">
-                                <div className="relative aspect-video md:aspect-auto md:h-full">
-                                    <Image src={course?.courseId?.image} alt={course?.courseId?.name} fill sizes="350" className="object-cover" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:bg-gradient-to-r" />
-                                    <h1 className="absolute top-4 left-4 bg-sky-800/60 px-3 py-0.5 rounded text-amber-200 hover:bg-sky-500/90">
-                                        {course?.courseId?.category}
-                                    </h1>
-                                </div>
+                                    <div className="relative aspect-video md:aspect-auto md:h-full">
+                                        <Image src={course?.courseId?.image} alt={course?.courseId?.name} fill sizes="350" className="object-cover" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-blue-300/20 to-transparent md:bg-gradient-to-r" />
+                                        <h1 className="absolute top-4 left-4 bg-indigo-700/60 px-3 py-0.5 rounded text-amber-200 hover:bg-sky-500/90">
+                                            {course?.courseId?.category}
+                                        </h1>
+                                    </div>
                                 </div>
 
                                 {/* Course Content */}

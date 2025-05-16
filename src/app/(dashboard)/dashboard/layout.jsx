@@ -6,9 +6,9 @@ const layout = ({children}) => {
   return (
     <div className="">
       {/* <Topbar/> */}
-      <div className="flex">
+      <div className="flex flex-col-reverse lg:flex-row">
         <Sidebar/>
-        <div className="w-full">
+        <div className="w-full pb-14">
           {children}
         </div>
       </div>

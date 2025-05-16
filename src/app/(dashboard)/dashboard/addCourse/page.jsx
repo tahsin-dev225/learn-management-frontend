@@ -2,6 +2,7 @@
 import { useAddCourseMutation } from "@/components/redux/course/courseApi";
 import StudentRoute from "@/components/routes/StudentRoute";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import Swal from "sweetalert2";
 
 const Page = () => {
@@ -9,6 +10,7 @@ const Page = () => {
 
     const [lesson, setLesson] = useState([{ video : "", title : "", id : 0}])
     const [addCourse] = useAddCourseMutation()
+    const currentUser = useSelector(state => state?.userReducer?.userInfo);
 
     const createCourse = async (e) =>{
       e.preventDefault()
@@ -18,7 +20,8 @@ const Page = () => {
           image :e.target.photo.value,
           category : e.target.category.value,
           price : e.target.price.value,
-          lessons : lesson
+          lessons : lesson,
+          creator : currentUser?._id
       }
       console.log(courseInfo)
       try {
@@ -36,6 +39,7 @@ const Page = () => {
           console.log('error from create course', err)
       }
     }
+
     const handleDelete = (id)=>{
         // console.log(id)
         const lessons = [...lesson];

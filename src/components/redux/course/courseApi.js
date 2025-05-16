@@ -34,6 +34,7 @@ export const courseApi = apiSlice.injectEndpoints({
                     body: info,
                 };
             },
+            invalidatesTags : ['courses']
         }),
         getEnrolledCourse : builder.query({
             query : (query)=>{
@@ -44,10 +45,12 @@ export const courseApi = apiSlice.injectEndpoints({
         }),
         getSingleEnrolled : builder.query({
             query : (query)=>{
+                console.log(query)
                 return {
                     url : `/enrolled?userId=${query?.userId}&courseId=${query?.courseId}`
                 };
-            }
+            },
+            providesTags : ['courses']
         }),
         getLesson : builder.query({
             query : (query)=>{

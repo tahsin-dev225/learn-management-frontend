@@ -1,25 +1,33 @@
 "use client"
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IoMdLogOut, IoMdPersonAdd } from "react-icons/io";
 import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
 import { FaCircle, FaRegCircleUser, FaRegUser } from "react-icons/fa6";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import useFirebase from '../Firebase/useFirebase';
+import { logUser } from '../redux/user/userSlice';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
     const {user} = useFirebase()
     const {logOut} = useFirebase()
+    const dispatch = useDispatch();
+    
+    const isStudent = useSelector(state => state?.userReducer?.userInfo)
+
+    useEffect(()=>{
+        dispatch(logUser(user))
+    },[user])
 
     const toggleDrawer = () => {
         setIsOpen((prevState) => !prevState)
     }
 
     return (
-        <div className="navbar lg:px-6  sticky  bg-sky-100/20 top-0 z-50 w-full shadow ">
+        <div className="navbar lg:px-6  sticky  bg-sky-100/60 top-0 z-50 w-full shadow ">
 
             <div className="navbar-start ">
                 <div className="dropdown">
@@ -39,16 +47,15 @@ const Navbar = () => {
                 </div>
                 <ul
                     tabIndex={0}
-                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                    className="menu menu-sm text-gray-200 dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                     {
                         navItems?.map((item,idx) =><Link key={idx} className="my-2" href={item.path}>{item?.title}</Link>)
                     }
-                    <Link href="/dashboard">Dashboard</Link>
+                    {user && <Link className="mx-" href="/dashboard">Dashboard</Link>}
                 </ul>
                 </div>
                 <Link href='/' className="mx-3">
-                    <h1 className="text-2xl">Learn.</h1>
-                    {/* <Image className="rounded" src='/img/up-logo.jpg' width={80} height={40} alt="logo" /> */}
+                    <Image className="rounded" src='/img/logo.png' width={160} height={40} alt="logo" />
                 </Link>
             </div>
             <div className="navbar-start justify-center hidden lg:flex">
@@ -75,13 +82,14 @@ const Navbar = () => {
                 >
                     <div className="flex justify-between flex-col h-full items-center">
                         <div className="w-full justify-start my-2.5 mx-1">
-                            <p onClick={toggleDrawer} className="text-3xl font-bold cursor-pointer text-red-400 p-1.5">x </p
-                        ></div>
-                        <div className="">
-                            <Image className="my-6 rounded-full" src={`/img/userDef.png`} width={80} height={80} alt="user" />
-                            <p className="text-center text-slate-800">Name : {user?.name}</p>
+                            <button onClick={toggleDrawer} className="text-3xl font-bold cursor-pointer text-red-400 p-1.5">x </button>
+                            <div className="">
+                                <Image className="my-6 mx-auto rounded-full" src={`/img/userDef.png`} width={80} height={80} alt="user" />
+                                <p className="text-center text-slate-800">Name : {isStudent?.name}</p>
+                            </div>
                         </div>
-                        <button onClick={()=> logOut()} className="btn btn-primary my-8 text-white btn-sm"><IoMdLogOut />Log out</button>
+                        
+                        <button onClick={()=> logOut()} className="btn w-[85%] mx-auto btn-primary my-8 text-white btn-sm"><IoMdLogOut />Log out</button>
                     </div>
                 </Drawer>
                 }

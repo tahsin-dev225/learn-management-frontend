@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { FaBox } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 
 const page = () => {
@@ -17,12 +18,18 @@ const page = () => {
     const [enroledCourse] = useEnrolledCourseMutation()
     const { user } = useFirebase();
     const router = useRouter()
+    const currentUser = useSelector(state => state?.userReducer?.userInfo)
     
-    const isExistCourse = {userId : user, courseId : id}
+    const isExistCourse = {userId : currentUser?.email, courseId : id}
     const {data : isEnrolled} = useGetSingleEnrolledQuery(isExistCourse)
+    console.log(currentUser)
+    console.log(isEnrolled)
     
     const addEnrolled =async (id,coursePrice) =>{
-        if(isEnrolled){
+        if(!currentUser){
+           return router.push('/login')
+        }
+        if(isEnrolled[0]?._id){
             return Swal.fire({
                 position: "top-end",
                 icon: "error",
@@ -31,10 +38,7 @@ const page = () => {
                 timer: 1500
             });
         }
-
-        if(!user){
-           return router.push('/login')
-        }
+        
         const enrolledInfo = {
             courseId : id,
             email : user,
@@ -92,7 +96,7 @@ const page = () => {
             </div> */}
 
             <div className="bg-gradient-to-r from-purple-900 to-indigo-800 min-h-[92vh] text-white">
-                <div className="lg:w-[88%] mx-auto pt-8">
+                <div className="lg:w-[88%] mx-auto px-4 lg:px-0 pt-3.5 lg:pt-8">
                     <h2 className="text-4xl font-bold my-6">Course Details.</h2>
                     <p className="text-gray-300 mb-8 flex gap-4 items-center"><FaBox/> Choose from a variety of high-quality courses to enhance your skills.</p>
                 </div>
