@@ -20,7 +20,7 @@ const SingleCourse = ({course}) => {
                     <BookOpen className="h-3 w-3" />
                     <span>{course?.lessonId?.length}lessons</span>
                 </div>
-                <span className="font-bold">$89.99</span>
+                <span className="font-bold">{course?.price} BDT.</span>
                 </div>
             </div>
         </Link>

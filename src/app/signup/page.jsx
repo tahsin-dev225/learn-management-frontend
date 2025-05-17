@@ -30,7 +30,7 @@ const page = () => {
             .then(res =>{
                 setdisable(false)
                 dispatch(addUser(newUser))
-                router.push('/')
+                router.push('/dashboard')
             }).catch(error =>{
                 Swal.fire({
                     position: "top-end",
@@ -55,23 +55,23 @@ const page = () => {
 
                     <form onSubmit={handleSignup} className="w-[99%] overflow-hidden md:w-[90%] lg:w-[90%] mx-auto ">
                         <div className="my-4">
-                            <input type="text" name="name" className='w-full my-2 px-4 py-1.5 border border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-400' placeholder='Enter your name...' required />
+                            <input type="text" name="name" className='w-full my-2 px-4 py-1.5 border border-gray-600 rounded-full focus:outline-none focus:ring-2' placeholder='Enter your name...' required />
                         </div>
                         <div className="my-4">
-                            <input type="text" name="email" className='w-full my-2 px-4 py-1.5 border border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-400' placeholder='Enter your email...' required/>
+                            <input type="text" name="email" className='w-full my-2 px-4 py-1.5 border border-gray-600 rounded-full focus:outline-none focus:ring-2' placeholder='Enter your email...' required/>
                         </div>
                         <div className="my-4">
-                            <input type="password" name="password" className='w-full my-2 px-4 py-1.5 border border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-400' placeholder='Enter your password...' required/>
+                            <input type="password" name="password" className='w-full my-2 px-4 py-1.5 border border-gray-600 rounded-full focus:outline-none focus:ring-2' placeholder='Enter your password...' required/>
                         </div>
                         <div className="my-2">
-                            <select name="role" className='w-[140px] text-[13px] border border-slate-600 rounded-lg pr-5 px-4 py-2 outline-none shadow-xl'  >
-                                <option className='text-gray-900' selected value="student">Student</option>
+                            <select name="role" defaultValue="student" className='w-[140px] text-[13px] border border-slate-600 rounded-lg pr-5 px-4 py-2 outline-none shadow-xl'  >
+                                <option className='text-gray-900' value="student">Student</option>
                                 <option className='text-gray-900' value="teacher">Teacher</option>
                             </select>
                         </div>
                         <input type="submit" value="Login"  disabled={disable} className={`${disable ? disableButton : normalButton}  `}  />
                     </form>
-                    <div className="mx-auto my-3.5 text-center">Don't have account <Link href="/login" className='text-blue-400 font-semibold'>Login </Link>?</div>
+                    <div className="mx-auto my-3.5 text-center">Already have account <Link href="/login" className='text-blue-400 font-semibold'>Login </Link>?</div>
 
                 </div>
 

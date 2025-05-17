@@ -3,7 +3,7 @@ import useFirebase from '@/components/Firebase/useFirebase';
 import { useEnrolledCourseMutation, useGetCourseQuery, useGetSingleEnrolledQuery } from '@/components/redux/course/courseApi';
 import Footer from '@/components/shared/Footer';
 import Navbar from '@/components/shared/Navbar';
-import { Badge } from 'lucide-react';
+import { Badge, Diamond } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
@@ -95,15 +95,18 @@ const page = () => {
                 </div>
             </div> */}
 
-            <div className="bg-gradient-to-r from-purple-900 to-indigo-800 min-h-[92vh] text-white">
-                <div className="lg:w-[88%] mx-auto px-4 lg:px-0 pt-3.5 lg:pt-8">
-                    <h2 className="text-4xl font-bold my-6">Course Details.</h2>
-                    <p className="text-gray-300 mb-8 flex gap-4 items-center"><FaBox/> Choose from a variety of high-quality courses to enhance your skills.</p>
+            <div className="bg-gradient-to-r from-purple-950 to-indigo-800 pb-8 min-h-[92vh] text-white">
+                <div className="lg:w-[88%] mx-auto px-4 lg:px-0 pt-3.5 lg:pt-4">
+                    <h2 className="text-4xl font-bold my-4">Course Details.</h2>
+                    <p className="text-gray-300 mb-8 flex gap-4 items-center">
+                        <Diamond className='text-blue-500' /> 
+                        Choose from a variety of high-quality courses to enhance your skills.
+                    </p>
                 </div>
-                <div className="max-w-6xl mx-auto px-4 py-8 md:py-20">
+                <div className="bg-gradient-to-r from-purple-900 rounded-lg to-indigo-800  max-w-[1220px] 3xl:max-w-[1500px] mx-auto px-4 lg:px-8 py-8 md:py-14 my-5 shadow-2xl">
                     <div className="grid md:grid-cols-2 gap-8 items-center">
                         <div className="space-y-6">
-                            <h1 className="bg-purple-700 hover:bg-purple-700 text-white px-4 rounded-4xl text-sm py-1.5 w-max">{course?.category} Course</h1>
+                            <h1 className="bg-purple-600 hover:bg-purple-700 text-white px-4 rounded-4xl text-sm py-1.5 w-max">{course?.category} Course</h1>
                             <h1 className="text-3xl md:text-5xl font-bold leading-tight">{course?.name}</h1>
                             <p className="text-lg text-purple-100 max-w-lg">{course?.description}</p>
                             <p className=" text-xl text-[#e6c2d9] font-semibold">Price : {course?.price} tk.</p>
@@ -120,7 +123,7 @@ const page = () => {
                                     src={course?.image}
                                     alt="Course thumbnail"
                                     width={600}
-                                    height={400}
+                                    height={500}
                                     className="object-contain p-8"
                                     />
                                 </div>

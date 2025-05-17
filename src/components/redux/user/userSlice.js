@@ -64,6 +64,7 @@ const userSlice = createSlice({
             state.isLogged = false;
             state.isloggedError = false;
             state.errorMesage = false;
+            state.loggedUserErrorMessage = false;
         } 
     },
     extraReducers : (builder) =>{

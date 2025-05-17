@@ -35,7 +35,7 @@ const page = () => {
             signIn(newUser.email,newUser.password)
             .then(res =>{
                 setdisable(false)
-                router.push('/')
+                router.push('/dashboard')
             })
             .catch(error =>{
                 Swal.fire({

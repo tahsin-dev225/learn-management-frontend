@@ -1,9 +1,13 @@
 "use client"
 import { useAddCourseMutation } from "@/components/redux/course/courseApi";
 import StudentRoute from "@/components/routes/StudentRoute";
+import axios from "axios";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import Swal from "sweetalert2";
+
+const image_hosting_key = process.env.NEXT_PUBLIC_IMAGE_HOSTING_KEY;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const Page = () => {
     const inStyle = 'py-2 px-3 rounded-md border focus:border focus:border-sky-300 focus:outline-0 flex-grow border-gray-400 text-gray-900';
@@ -12,32 +16,39 @@ const Page = () => {
     const [addCourse] = useAddCourseMutation()
     const currentUser = useSelector(state => state?.userReducer?.userInfo);
 
-
-    console.log('paichi',currentUser)
-
     const createCourse = async (e) =>{
       e.preventDefault()
-      const courseInfo ={
-          name : e.target.name.value,
-          description : e.target.description.value,
-          image :e.target.photo.value,
-          category : e.target.category.value,
-          price : e.target.price.value,
-          lessons : lesson,
-          creator : currentUser?._id
-      }
-      console.log(courseInfo)
       try {
-          const resp = await addCourse(courseInfo);
-          e.target.reset()
-          Swal.fire({
-              position: "top-end",
-              icon: "success",
-              title: `Course created successfully `,
-              showConfirmButton: false,
-              timer: 1500
-          });
-          setLesson([{ video : "", title : "", id : 0}])
+        const imageFile ={image : e.target.photo.files[0]}
+        const res =await  axios.post(image_hosting_api, imageFile,{
+            headers:{
+                'Content-Type' : 'multipart/form-data'
+            }
+        } )
+
+        if(res.data.success  === true){ 
+          const courseInfo ={
+              name : e.target.name.value,
+              description : e.target.description.value,
+              image : res?.data?.data?.display_url,
+              category : e.target.category.value,
+              price : e.target.price.value,
+              lessons : lesson,
+              creator : currentUser?._id
+            }
+          console.log(courseInfo)
+        
+            const resp = await addCourse(courseInfo);
+            e.target.reset()
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: `Course created successfully `,
+                showConfirmButton: false,
+                timer: 1500
+            });
+            setLesson([{ video : "", title : "", id : 0}])
+        }
       } catch (err) {
           console.log('error from create course', err)
       }
@@ -60,19 +71,19 @@ const Page = () => {
               <div className="flex flex-col lg:flex-row gap-4">
                 <div className="w-full">
                     <label className="block text-gray-700 font-semibold mb-2">Course Name</label>
-                    <input type="text"  placeholder="Enter course name..." name="name"
+                    <input type="text"  placeholder="Enter course name..." name="name" required
                       className="w-full border border-gray-300 text-gray-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"/>
                 </div>
                 <div className="w-full">
                     <label className="block text-gray-700 font-semibold mb-2">Course Price</label>
-                    <input type="number"  placeholder="Course price..." name="price"
+                    <input type="number"  placeholder="Course price..." name="price" required
                       className="w-full border border-gray-300 text-gray-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"/>
                 </div>
               </div>
               {/* Description */}
               <div>
                 <label className="block text-gray-700 font-semibold mb-2">Description</label>
-                <textarea name="description" placeholder="Write a short description about your course..."
+                <textarea name="description" required placeholder="Write a short description about your course..."
                   rows="4" 
                   className="w-full border border-gray-300 text-gray-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
               </div>
@@ -80,11 +91,11 @@ const Page = () => {
               <div className="flex flex-col lg:flex-row justify-center gap-4">
                   <div className="w-full">
                       <label className="block text-gray-700 font-semibold mb-2">Thumbnail Image</label>
-                      <input name="photo" type="text" className="w-full border text-gray-500 border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 " />
+                      <input name="photo" type="file" required className="w-full border text-gray-500 border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 " />
                   </div>
                   <div className="w-full">
                       <label className="block text-gray-700 font-semibold mb-2">Select Category</label>
-                      <select placeholder="chose an option" name="category"
+                      <select placeholder="chose an option" name="category" required
                           className="w-full border text-gray-800 border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                       >
                           <option value="Web Development">Web Development</option>
@@ -102,18 +113,18 @@ const Page = () => {
                   lesson.map((lessonObject,idx) =><div key={idx} className="flex rounded-2xl flex-col lg:flex-row gap-3 my-3">
                     <h1 className='py-2 px-3 w-min rounded-md border bg-sky-400'>{idx+1}</h1>
 
-                      <input type="text" onChange={e => {
+                      <input required type="text" onChange={e => {
                           const preData = [...lesson]
                           preData[idx].video = e.target.value
                           setLesson(preData)
-                      }} className={inStyle} value={lessonObject.video}  placeholder='Enter video link...' name="video" required />
+                      }} className={inStyle} value={lessonObject.video}  placeholder='Enter video link...' name="video"  />
 
-                      <input type="text" onChange={e => {
+                      <input required type="text" onChange={e => {
                           const preData = [...lesson]
                           preData[idx].title = e.target.value;
                           // preData[idx].id = idx;
                           setLesson(preData)
-                      }} className={inStyle} placeholder='Enter video title' name="title" required />
+                      }} className={inStyle} placeholder='Enter video title' name="title"  />
                       
                       <h1 className='py-2 px-3 rounded-md border bg-red-600 text-white text-center cursor-pointer'
                       onClick={()=>handleDelete(lessonObject.id)}
