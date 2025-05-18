@@ -21,8 +21,6 @@ export default function Sidebar() {
   const dispatch = useDispatch();
   const isStudent = useSelector(state => state?.userReducer?.userInfo)
 
-  console.log(pathName)
-
   useEffect(() => {
     if(user){
       dispatch(logUser(user))
@@ -53,7 +51,7 @@ export default function Sidebar() {
       {
         isOpen 
       }
-      <div className="px-2.5 py-2.5 flex lg:flex-col flex-row justify-between">
+      <div className="px-2.5 py-2.5 flex lg:flex-col flex-row justify-evenly">
         <Link href="/dashboard" className={ `${isOpen ? isOpenStyle : noOpen} ${pathName === "/dashboard" ? "bg-sky-600" : ""}`}><LuLayoutDashboard/><span className={isOpen ? '': 'hidden'}>Dashboard</span> </Link>
 
         {isStudent?.role === 'teacher' && <Link href="/dashboard/addCourse" className={`${isOpen ? isOpenStyle : noOpen} ${pathName === "/dashboard/addCourse" ? "bg-sky-600" : ""}` }><MdAddToPhotos/><span className={isOpen ? '': 'hidden'}>Add Course</span> </Link>}

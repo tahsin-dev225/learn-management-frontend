@@ -34,14 +34,15 @@ export const courseApi = apiSlice.injectEndpoints({
                     body: info,
                 };
             },
-            invalidatesTags : ['courses']
+            invalidatesTags : ['courses','enrolled']
         }),
         getEnrolledCourse : builder.query({
             query : (query)=>{
                 return {
                     url : `/enrolled/${query}`
                 };
-            }
+            },
+            providesTags : ['enrolled']
         }),
         getSingleEnrolled : builder.query({
             query : (query)=>{

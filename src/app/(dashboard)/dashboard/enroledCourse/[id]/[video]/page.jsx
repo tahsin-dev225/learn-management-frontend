@@ -161,7 +161,7 @@ const VideoPage = () => {
                             <form className="w-full flex flex-col justify-end gap- p-4 my-4" onSubmit={handleAddComment}>
                                 <textarea type="text" className="w-full text-[15px] px-4 my-2 outline-none p-2 rounded-lg shadow border border-[#b2adad]" placeholder="Add a comment" name="comment" required />
                                 <div className="flex justify-end">
-                                    <div className="flex gap-1.5 justify-center items-center bg-[#171616] rounded px-4 py-2 text-white">
+                                    <div className="flex gap-1.5 justify-center items-center cursor-pointer mt-3.5 bg-[#171616] rounded px-4 py-2 text-white">
                                         <FaTelegramPlane className='text-[18px]' />
                                         <input type="submit" className="" value="Add Comment" />
                                     </div>

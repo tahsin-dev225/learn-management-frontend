@@ -103,7 +103,7 @@ const page = () => {
                         Choose from a variety of high-quality courses to enhance your skills.
                     </p>
                 </div>
-                <div className="bg-gradient-to-r from-purple-900 rounded-lg to-indigo-800  max-w-[1220px] 3xl:max-w-[1500px] mx-auto px-4 lg:px-8 py-8 md:py-14 my-5 shadow-2xl">
+                <div className="bg-gradient-to-r from-purple-900 rounded-lg to-indigo-800  max-w-[1220px]  3xl:max-w-[1500px] mx-auto px-4 lg:px-8 py-8 md:py-14 my-5 shadow-2xl">
                     <div className="grid md:grid-cols-2 gap-8 items-center">
                         <div className="space-y-6">
                             <h1 className="bg-purple-600 hover:bg-purple-700 text-white px-4 rounded-4xl text-sm py-1.5 w-max">{course?.category} Course</h1>
