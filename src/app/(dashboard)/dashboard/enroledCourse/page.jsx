@@ -1,14 +1,12 @@
 "use client"
 import useFirebase from "@/components/Firebase/useFirebase";
 import { useGetEnrolledCourseQuery } from "@/components/redux/course/courseApi";
-import { logUser } from "@/components/redux/user/userSlice";
 import StudentRoute from "@/components/routes/StudentRoute";
 import { ArrowRight, BarChart, BookOpen, Clock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaBox } from "react-icons/fa";
 
-import { Button, Badge, Progress } from "antd"
+import {  Progress } from "antd"
 
 const page = () => {
     const {user} = useFirebase();
@@ -36,7 +34,7 @@ const page = () => {
                                 {/* Course Image - Larger on mobile, side column on desktop */}
                                 <div className="md:w-1/3 lg:w-5/12 relative">
                                     <div className="relative aspect-video md:aspect-auto md:h-full">
-                                        <Image src={course?.courseId?.image} alt={course?.courseId?.name} fill sizes="350" className="object-cover" />
+                                        <Image src={course?.courseId?.image} alt={course?.courseId?.name} fill sizes="350" className="object-" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-blue-300/20 to-transparent md:bg-gradient-to-r" />
                                         <h1 className="absolute top-4 left-4 bg-indigo-700/60 px-3 py-0.5 rounded text-amber-200 hover:bg-sky-500/90">
                                             {course?.courseId?.category}

@@ -53,6 +53,7 @@ const page = () => {
                 showConfirmButton: false,
                 timer: 1500
             });
+            router.push('/dashboard/enroledCourse')
         } catch (err) {
             console.log('error from enrolled  course details page', err)
         }

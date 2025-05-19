@@ -22,8 +22,8 @@ const CourseSection = () => {
             <p className="text-gray-600 text-center mb-10 mx-auto ">Choose from a variety of high-quality courses to enhance your skills.</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-              {data?.map((course) => ( <SingleCourse key={course?._id} course={course} ></SingleCourse>
-              ))}
+              {data?.slice(0,3)?.map((course) =>  <SingleCourse key={course?._id} course={course} ></SingleCourse>
+              )}
             </div>
             <div className="flex justify-center mt-8">
                 <Link href='/courses' size="lg" className="gap-3 text-gray-900 font-semibold flex  items-center rounded bg-black/5 broder border-b-blue-300 px-5 py-2.5">

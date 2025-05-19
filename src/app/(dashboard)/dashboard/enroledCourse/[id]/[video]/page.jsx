@@ -132,9 +132,9 @@ const VideoPage = () => {
                         <div className="w-full p-1 py-5">
                         {
                         <div className="">
-                            <div className="lg:flex justify-between gap-4 items-center">
+                            <div className="sm:flex justify-between gap-4 items-center">
                                 <h1 className="text-lg lg:text-2xl font-bold"> {currentLesson?.title}</h1>
-                                <div className="flex rounded-2xl items-center bg-blue-600/60 text-amber-200">
+                                <div className="flex rounded-2xl items-center bg-blue-600/60 text-amber-200 w-max">
 
                                 { isLiked?.length ?<p onClick={()=> removeLikes()} className="px-4 rounded-l-2xl flex gap-1 hover:bg-blue-900/50 cursor-pointer py-1.5 border-r border-sky-950 text-lg">
                                         <AiTwotoneLike  className="text-2xl " ></AiTwotoneLike >
@@ -146,7 +146,7 @@ const VideoPage = () => {
                                         <span className="text-[16px]">{allLIkes}</span>
                                     </p>}
                                 {
-                                    isDisliked?.length ?  <p onClick={()=> removeDislikes()} className="px-4 rounded-r-2xl flex gap-1 hover:bg-blue-900/50 cursor-pointer py-1.5  border-sky-950 text-lg">
+                                    isDisliked?.length ?  <p onClick={()=> removeDislikes()} className="px-4  rounded-r-2xl flex gap-1 hover:bg-blue-900/50 cursor-pointer py-1.5  border-sky-950 text-lg">
                                     <span className="text-[16px]">{allDislikes}</span>
                                     <BiSolidDislike className="text-2xl" ></BiSolidDislike>
                                 </p>

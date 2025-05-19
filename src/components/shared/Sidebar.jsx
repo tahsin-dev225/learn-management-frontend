@@ -39,7 +39,7 @@ export default function Sidebar() {
   }, [user]);
 
   return (
-    <div className={`lg:min-h-screen fixed bottom-0 w-full overflow-y-hidden lg:sticky bg-[#1a1d4f]  text-white ${isOpen ? "lg:max-w-[250px] lg:min-w-60 " : "lg:w-min px-1.5"} transition-all duration-700  flex flex-col`}>
+    <div className={`lg:min-h-screen z-30 fixed bottom-0 w-full overflow-y-hidden lg:sticky bg-[#1a1d4f]  text-white ${isOpen ? "lg:max-w-[250px] lg:min-w-60 " : "lg:w-min px-1.5"} transition-all duration-700  flex flex-col`}>
       {/* <button
         className="mb-2 mt-2 justify-end p-1 text-xl focus:outline-none hidden md:flex"
         onClick={() => setIsOpen(!isOpen)}>

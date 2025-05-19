@@ -56,10 +56,10 @@ const TeacherBarChart = () => {
                 }}
                 >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
+                <XAxis dataKey="courseName" />
                 <YAxis />
-                <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-                    {data.map((entry, index) => (
+                <Bar dataKey="enrolledStudent" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+                    {data?.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={colors[index % 20]} />
                     ))}
                 </Bar>

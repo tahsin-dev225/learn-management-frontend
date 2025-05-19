@@ -1,6 +1,7 @@
 "use client"
 import StuCourseCard from "@/components/Dashboard/StuCourseCard";
 import StudentDashCard from "@/components/Dashboard/StudentDashCard";
+import TeacherBarChart from "@/components/Dashboard/TeacherBarChart";
 import TeacherCourseCard from "@/components/Dashboard/TeacherCourseCard";
 import TeacherDashCard from "@/components/Dashboard/TeacherDashCard";
 import useFirebase from "@/components/Firebase/useFirebase";
@@ -78,6 +79,10 @@ const page = () => {
                     <TeacherDashCard title="Total Enrolled Students" value="145" />
                     <TeacherDashCard title="Pending Assignments" value="8" />
                     <TeacherDashCard title="Total Earnings" value="$1,250" />
+                </div>
+
+                <div className="mb-6">
+                    <TeacherBarChart/>
                 </div>
 
                 <div className="mb-8">
