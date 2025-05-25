@@ -106,7 +106,7 @@ const Page = () => {
                   </div>
               </div>
               <div className="w-full flex justify-end ">
-                <h1 onClick={()=> setLesson([...lesson, { video : "", title : "", id : lesson.length}])}
+                <h1 onClick={()=> setLesson([...lesson, { video : "", title : "", id: Date.now() + Math.random()}])}
                 className='bg-blue-400 hover:cursor-pointer hover:bg-blue-600 text-white font-semibold px-4 py-1.5 rounded-lg shadow-lg transition'>+ Add video</h1>
               </div>
               {

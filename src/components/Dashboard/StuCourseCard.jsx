@@ -1,6 +1,7 @@
-import React from 'react';
+"use client"
+import Link from 'next/link';
 
-const StuCourseCard = ({ title, progress }) => {
+const StuCourseCard = ({ title, progress,id }) => {
     return (
         <div className="bg-white p-4 rounded-xl shadow">
             <h3 className="font-semibold text-lg mb-2">{title}</h3>
@@ -11,9 +12,9 @@ const StuCourseCard = ({ title, progress }) => {
                 ></div>
             </div>
             <p className="text-sm text-gray-600">{progress}% completed</p>
-            <button className="mt-2 px-4 py-1 text-sm bg-indigo-500 text-white rounded hover:bg-indigo-600">
+            <Link href={`/dashboard/enroledCourse/${id}`} className="mt-2 px-4 py-1 text-sm bg-indigo-500 text-white rounded hover:bg-indigo-600">
                 Continue
-            </button>
+            </Link>
         </div>
     );
 };

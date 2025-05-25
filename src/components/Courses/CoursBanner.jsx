@@ -17,7 +17,7 @@ const CoursBanner = () => {
             </div>
             <div className="relative mt-10 md:mt-0 w-full md:w-1/2 flex justify-center items-center">
                 <div className="absolute right-0 top-0 h-full w-full md:w-[120%] md:h-[120%] bg-[#2B2D42] rotate-6 -z-10 origin-bottom-left rounded-l-full"></div>
-                <div className="absolute bottom-4 right-6 w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center">
+                <div className="absolute bottom-4 right-6 w-16 h-16 bg-blue-400 md:rounded-full flex items-center justify-center">
                     <div className="w-10 h-10 bg-blue-200 rounded-full"></div>
                 </div>
                 <Image

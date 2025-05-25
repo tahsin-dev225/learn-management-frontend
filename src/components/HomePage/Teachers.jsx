@@ -9,50 +9,52 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+
+export const allTeachers =[
+            {
+                image : "/img/techer1.jpg",
+                name : 'John Smith',
+                category : 'Web Development',
+                description : 'Senior Developer with 10+ years of experience at top tech companies.',
+                student : '15K+ Students',
+                course : '12 Courses'
+            },
+            {
+                image : "/img/teacher2.jpg",
+                name : 'Tasin Sir',
+                category : 'Design',
+                description : 'Senior Developer with 10+ years of experience at top tech companies.',
+                student : '15K+ Students',
+                course : '12 Courses'
+            },
+            {
+                image : "/img/teacher3.jpg",
+                name : 'Bajaw Roni',
+                category : 'Bussiness',
+                description : 'Senior Developer with 10+ years of experience at top tech companies.',
+                student : '15K+ Students',
+                course : '12 Courses'
+            },
+            {
+                image : "/img/techer1.jpg",
+                name : 'John Smith',
+                category : 'Web Development',
+                description : 'Senior Developer with 10+ years of experience at top tech companies.',
+                student : '15K+ Students',
+                course : '12 Courses'
+            },
+            {
+                image : "/img/teacher2.jpg",
+                name : 'Dubiya mk.',
+                category : 'Merketing',
+                description : 'Senior Developer with 10+ years of experience at top tech companies.',
+                student : '15K+ Students',
+                course : '12 Courses'
+            },
+        ]
 const Teachers = () => {
 
-    const allTeachers =[
-        {
-            image : "/img/techer1.jpg",
-            name : 'John Smith',
-            category : 'Web Development',
-            description : 'Senior Developer with 10+ years of experience at top tech companies.',
-            student : '15K+ Students',
-            course : '12 Courses'
-        },
-        {
-            image : "/img/teacher2.jpg",
-            name : 'Tasin Sir',
-            category : 'Design',
-            description : 'Senior Developer with 10+ years of experience at top tech companies.',
-            student : '15K+ Students',
-            course : '12 Courses'
-        },
-        {
-            image : "/img/teacher3.jpg",
-            name : 'Bajaw Roni',
-            category : 'Bussiness',
-            description : 'Senior Developer with 10+ years of experience at top tech companies.',
-            student : '15K+ Students',
-            course : '12 Courses'
-        },
-        {
-            image : "/img/techer1.jpg",
-            name : 'John Smith',
-            category : 'Web Development',
-            description : 'Senior Developer with 10+ years of experience at top tech companies.',
-            student : '15K+ Students',
-            course : '12 Courses'
-        },
-        {
-            image : "/img/teacher2.jpg",
-            name : 'Dubiya mk.',
-            category : 'Merketing',
-            description : 'Senior Developer with 10+ years of experience at top tech companies.',
-            student : '15K+ Students',
-            course : '12 Courses'
-        },
-    ]
+    
     return (
         <section className="w-full  bg-gray-200 py-12 md:py-24 bg-muted/50">
             <div className=" lg:w-[90%] max-w-[1600px] mx-auto px-4 md:px-6">

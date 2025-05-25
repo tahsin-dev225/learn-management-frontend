@@ -1,6 +1,6 @@
 "use client"
 import useFirebase from "@/components/Firebase/useFirebase";
-import { useGetEnrolledCourseQuery } from "@/components/redux/course/courseApi";
+import { useGetCourseLessonsQuery, useGetEnrolledCourseQuery } from "@/components/redux/course/courseApi";
 import StudentRoute from "@/components/routes/StudentRoute";
 import { ArrowRight, BarChart, BookOpen, Clock } from "lucide-react";
 import Image from "next/image";
@@ -10,7 +10,10 @@ import {  Progress } from "antd"
 
 const page = () => {
     const {user} = useFirebase();
-    const {data :courses, isLoading} = useGetEnrolledCourseQuery(user)
+    const {data :courses, isLoading} = useGetEnrolledCourseQuery(user);
+    // const {data : lessons} = useGetCourseLessonsQuery()
+
+
     if(isLoading){
         return <div className="flex justify-center items-center w-full min-h-screen">Loading....</div>
     }
@@ -25,7 +28,8 @@ const page = () => {
                         </header>
 
                         <div className="space-y-8 w-[95%] mx-auto">
-                        {courses?.map((course) => (
+                        { courses.length ?
+                        courses?.map((course) => (
                             <div
                             key={course?._id}
                             className="bg-white rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
@@ -63,10 +67,6 @@ const page = () => {
                                     {/* Course stats */}
                                     <div className="flex flex-wrap gap-4 text-sm text-sky-500">
                                         <div className="flex items-center">
-                                            <BookOpen className="h-4 w-4 mr-1" />
-                                            <span>{course?.courseId?.lessonIds.length} lessons</span>
-                                        </div>
-                                        <div className="flex items-center">
                                             <BarChart className="h-4 w-4 mr-1" />
                                             <span>
                                             {course?.courseId?.progress < 30 ? "Beginner" : course?.courseId?.progress < 70 ? "Intermediate" : "Advanced"}
@@ -85,7 +85,10 @@ const page = () => {
                                 </div>
                             </div>
                             </div>
-                        ))}
+                        ))
+                        :
+                        <div className="h-full w-full flex justify-center items-center">You don't have any enrolled courses .<Link href='/courses' className="font-semibold text-sky-500"> Enrole Course?</Link></div>
+                    }
                         </div>
                     </div>
                     </div>

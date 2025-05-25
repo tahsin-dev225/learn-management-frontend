@@ -110,6 +110,10 @@ const navItems = [
         title : "Courses",
         path : "/courses",
     },
+    {
+        title : "About Us",
+        path : "/aboutUs",
+    },
 ]
 
 export default Navbar;

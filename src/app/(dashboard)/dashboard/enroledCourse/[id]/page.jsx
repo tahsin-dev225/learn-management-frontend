@@ -1,5 +1,5 @@
 "use client"
-import { useAddCommentMutation, useAddLikeMutation, useGetAllLikeQuery, useGetCommentQuery, useGetCourseQuery,
+import { useAddCommentMutation, useAddLikeMutation, useAddViewMutation, useGetAllLikeQuery, useGetCommentQuery, useGetCourseLessonsQuery, useGetCourseQuery,
          useGetLikeQuery, useRemoveLikeMutation } from "@/components/redux/course/courseApi";
 
 import Image from "next/image";
@@ -12,6 +12,22 @@ const page = () => {
     const {id} = useParams()
     const {data : course ,isLoading, error} = useGetCourseQuery(id)
     const currentUser = useSelector(state => state?.userReducer?.userInfo)
+    const {data : lessons} = useGetCourseLessonsQuery(id)
+    const [addView] = useAddViewMutation()
+
+    const increaseView = async (viewLessonId) =>{
+        try {
+            const newViewedVideo = {
+                lessonId : viewLessonId,
+                courseId : course?._id,
+                userId : currentUser?._id
+            }
+            const res = await addView(newViewedVideo)
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
     
     
     if(isLoading){
@@ -40,10 +56,10 @@ const page = () => {
                         <div className="lg:min-w-96 rounded-xl min-h-screen bg-[#eae1e1]">
                             <div className="bg-[#171717] rounded-t-xl py-4 px-4">
                                 <h1 className="text-lg font-semibold text-gray-50">Course Content</h1>
-                                <p className="text-gray-300 font-medium text-[15px]">{course?.lessonIds.length} Lessons</p>
+                                <p className="text-gray-300 font-medium text-[15px]">{lessons?.length} Lessons</p>
                             </div>
                             {
-                                course?.lessonIds?.map((lesson,idx) => <Link href={`/dashboard/enroledCourse/${id}/${lesson?._id }`}
+                                lessons?.map((lesson,idx) => <Link  onClick={()=>increaseView(lesson?._id)} href={`/dashboard/enroledCourse/${id}/${lesson?._id }`}
                                 key={idx} 
                                 className="flex gap-2 my-2 p-1 cursor-pointer bg-[#dfd3d3] mx-1 rounded-md relative justify-start px-3 ">
                                         <iframe width="160" height="75" src={lesson?.video}

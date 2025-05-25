@@ -22,6 +22,7 @@ const useFirebase = () => {
     }
     const logOut = ()=>{
         dispatch(removeLoggedError())
+        dispatch(removeLoggedError())
         return signOut(auth)
     }
 

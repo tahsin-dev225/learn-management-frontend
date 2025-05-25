@@ -60,7 +60,7 @@ const Banner = () => {
             <div className="flex flex-col text-center lg:text-left justify-center space-y-6 max-w-2xl">
               <div className="space-y-3">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight">
-                  Learn Without Limits
+                  <span className='text-[#3d21bc]'>Learn </span>Without Limits
                 </h1>
                 <p className="text-sm sm:text-base md:text-lg xl:text-xl text-[#1a2349] text-muted-foreground max-w-[600px] mx-auto lg:mx-0">
                   Start, switch, or advance your career with thousands of courses from expert teachers.
@@ -70,7 +70,7 @@ const Banner = () => {
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4">
                 <Link
                   href="/courses"
-                  className="flex items-center mx-auto lg:mx-0 gap-2 w-max text-white text-[15px] px-4 py-2 lg:px-5 lg:py-2.5 rounded bg-black/90"
+                  className="flex items-center mx-auto lg:mx-0 gap-2 w-max text-white text-[15px] px-4 py-2 lg:px-5 lg:py-2.5 rounded bg-[#3d21bc]"
                 >
                   Explore Courses <ChevronRight className="h-4 w-4" />
                 </Link>
@@ -93,10 +93,10 @@ const Banner = () => {
             </div>
 
             {/* Image Section */}
-            <div className="w-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-[500px] xl:max-w-[550px] mx-auto flex justify-center items-center">
+            <div className="w-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-[500px] xl:max-w-[550px] mx-auto flex bg-gradient-to-br from-sky-300/5 to-sky-300/20 justify-center items-center">
               <div className="w-full aspect-square md:aspect-[5/4] relative">
                 <Image
-                  src="/img/vecbn.png"
+                  src="/img/brnbg.png"
                   alt="Students learning online"
                   fill
                   className="rounded-lg object-cover"

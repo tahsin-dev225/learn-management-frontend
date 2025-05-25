@@ -1,5 +1,5 @@
 "use client"
-import { useAddCommentMutation, useAddDislikeMutation, useAddLikeMutation, useGetAllDislikeQuery, useGetAllLikeQuery, useGetCommentQuery, useGetCourseQuery, useGetDislikeQuery, useGetLessonQuery, useGetLikeQuery,
+import { useAddCommentMutation, useAddDislikeMutation, useAddLikeMutation, useAddViewMutation, useGetAllDislikeQuery, useGetAllLikeQuery, useGetCommentQuery, useGetCourseLessonsQuery, useGetCourseQuery, useGetDislikeQuery, useGetLessonQuery, useGetLikeQuery,
      useRemoveDislikeMutation,
      useRemoveLikeMutation } from '@/components/redux/course/courseApi';
 import Image from 'next/image';
@@ -20,11 +20,13 @@ const VideoPage = () => {
     const {data : course ,isLoading, error} = useGetCourseQuery(id)
     const [addComment] = useAddCommentMutation()
     const {data : comments ,isLoading : comLoading } = useGetCommentQuery(video || '')
+    const {data : lessons} = useGetCourseLessonsQuery(id)
     const [addLike] = useAddLikeMutation()
     const [addDislike] = useAddDislikeMutation()
     const [removeLike] = useRemoveLikeMutation()
     const [removeDislike] = useRemoveDislikeMutation()
     const currentUser = useSelector(state => state?.userReducer?.userInfo)
+    const [addView] = useAddViewMutation()
     
     const {data : allLIkes } = useGetAllLikeQuery(video)
     const {data : allDislikes} = useGetAllDislikeQuery(video)
@@ -105,6 +107,20 @@ const VideoPage = () => {
         }
     }
 
+    const increaseView = async (viewLessonId) =>{
+        try {
+            const newViewedVideo = {
+                lessonId : viewLessonId,
+                courseId : course?._id,
+                userId : currentUser?._id
+            }
+            const res = await addView(newViewedVideo)
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     if(isLoading || comLoading){
         return <div className="flex justify-center items-center w-full min-h-screen">Loading....</div>
     }
@@ -170,7 +186,7 @@ const VideoPage = () => {
                             {
                             comments && <div className="">
                                 {
-                                comments.map(comment => <div key={comment?._id} className="">
+                                comments?.map(comment => <div key={comment?._id} className="">
                                     <div className="flex items-start p-3 gap-3 my-8 border rounded border-blue-950/15 shadow">
                                         <div className="size-8 rounded-full border border-b-gray-500">
                                             {
@@ -195,11 +211,11 @@ const VideoPage = () => {
                     <div className="lg:min-w-96 rounded-xl min-h-screen bg-[#eae1e1]">
                         <div className="bg-[#171717] rounded-t-xl py-4 px-4">
                             <h1 className="text-lg font-semibold text-gray-50">Course Content</h1>
-                            <p className="text-gray-300 font-medium text-[15px]">{course?.lessonIds.length} Lessons</p>
+                            <p className="text-gray-300 font-medium text-[15px]">{lessons?.length} Lessons</p>
                         </div>
                         {
-                        course?.lessonIds?.map((lesson,idx) => <Link key={idx} href={`/dashboard/enroledCourse/${id}/${lesson?._id }`} 
-                            className="flex gap-2 my-2 p-1 cursor-pointer bg-[#dfd3d3] mx-1 rounded-md relative justify-start px-3 ">
+                        lessons?.map((lesson,idx) => <Link onClick={()=>increaseView(lesson?._id)} key={idx} href={`/dashboard/enroledCourse/${id}/${lesson?._id }`} 
+                            className={`flex gap-2 my-2 p-1 cursor-pointer bg-[#dfd3d3] mx-1 rounded-md relative justify-start px-3 ${lesson?._id === video && 'bg-sky-700/25'}`}>
                                 <iframe width="160" height="75" src={lesson?.video}
                                 title="YouTube video player" frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

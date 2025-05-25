@@ -8,6 +8,14 @@ export const courseApi = apiSlice.injectEndpoints({
                 return {
                     url : `/course/${query}`
                 };
+            },
+            providesTags : ['courses']
+        }),
+        getCreatorCourse : builder.query({
+            query : (query)=>{
+                return {
+                    url : `/course/creator/${query}`
+                };
             }
         }),
         getAllCourse : builder.query({
@@ -25,6 +33,17 @@ export const courseApi = apiSlice.injectEndpoints({
                     body: info,
                 };
             },
+            invalidatesTags : ["courses"]
+        }),
+        addLesson : builder.mutation({
+            query: (info) => {
+                return {
+                    url: "/course/lesson",
+                    method: "POST",
+                    body: info,
+                };
+            },
+            invalidatesTags : ["courses"]
         }),
         enrolledCourse: builder.mutation({
             query: (info) => {
@@ -53,10 +72,26 @@ export const courseApi = apiSlice.injectEndpoints({
             },
             providesTags : ['courses']
         }),
+        getCourseLessons : builder.query({
+            query : (query)=>{
+                return {
+                    url : `/course/lessons/${query}`
+                };
+            },
+            providesTags : ["courses"]
+        }),
         getLesson : builder.query({
             query : (query)=>{
                 return {
                     url : `/course/lesson/${query}`
+                };
+            },
+            providesTags : ["courses"]
+        }),
+        getStudentSpend : builder.query({
+            query : (query)=>{
+                return {
+                    url : `/enrolled/spend/${query}`
                 };
             }
         }),
@@ -148,6 +183,92 @@ export const courseApi = apiSlice.injectEndpoints({
             },
             invalidatesTags : ['reaction']
         }),
+        deleteCourse : builder.mutation({
+            query : (query)=>{
+                return {
+                    url : `/course/${query}`,
+                    method : "DELETE"
+                };
+            },
+            invalidatesTags : ['courses']
+        }),
+        deleteLesson : builder.mutation({
+            query : (query)=>{
+                return {
+                    url : `/course/lesson/${query}`,
+                    method : "DELETE"
+                };
+            },
+            invalidatesTags : ['courses']
+        }),
+        updateLesson : builder.mutation({
+            query : (info)=>{
+                return {
+                    url : `/course/lesson`,
+                    method : "PUT",
+                    body : info
+                };
+            },
+            invalidatesTags : ['courses']
+        }),
+        getTopEnrolled : builder.query({
+            query : (query)=>{
+                return {
+                    url : `/enrolled/top/${query}`
+                };
+            },
+            providesTags : ["courses"]
+        }),
+        getEnrolledStats : builder.query({
+            query : (query)=>{
+                return {
+                    url : `/enrolled/stats/${query}`
+                };
+            },
+            providesTags : ["courses"]
+        }),
+        getTotalEarning : builder.query({
+            query : (query)=>{
+                return {
+                    url : `/enrolled/earning/${query}`
+                };
+            },
+            providesTags : ["courses"]
+        }),
+        addView : builder.mutation({
+            query: (info) => {
+                return {
+                    url: "/enrolled/view",
+                    method: "POST",
+                    body: info,
+                };
+            },
+            invalidatesTags : ['enrolled', 'courses']
+        }),
+        getProgressData : builder.query({
+            query : (query)=>{
+                return {
+                    url : `/enrolled/progress?courseId=${query?.courseId}&userId=${query?.userId}`
+                };
+            },
+            providesTags : ['enrolled', 'courses']
+        }),
+        getLast3CourseProgress : builder.query({
+            query : (query)=>{
+                return {
+                    url : `/enrolled/progress/${query}`
+                };
+            },
+            providesTags : ["courses"]
+        }),
+        getCourseCategory : builder.query({
+            query : (query)=>{
+                return {
+                    url : `/course/category/${query}`
+                };
+            },
+            providesTags : ['courses']
+        }),
     })
 })
 
@@ -158,6 +279,7 @@ export const {
     useEnrolledCourseMutation,
     useGetEnrolledCourseQuery,
     useGetSingleEnrolledQuery,
+    useGetCourseLessonsQuery,
     useGetLessonQuery,
     useAddCommentMutation,
     useGetCommentQuery,
@@ -168,6 +290,19 @@ export const {
     useGetDislikeQuery,
     useGetAllDislikeQuery,
     useRemoveLikeMutation,
-    useRemoveDislikeMutation
+    useRemoveDislikeMutation,
+    useGetStudentSpendQuery,
+    useDeleteCourseMutation,
+    useGetCreatorCourseQuery,
+    useAddLessonMutation,
+    useDeleteLessonMutation,
+    useUpdateLessonMutation,
+    useGetTopEnrolledQuery,
+    useGetEnrolledStatsQuery,
+    useGetTotalEarningQuery,
+    useAddViewMutation,
+    useGetProgressDataQuery,
+    useGetLast3CourseProgressQuery,
+    useGetCourseCategoryQuery
 } = courseApi
 

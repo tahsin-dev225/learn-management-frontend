@@ -15,7 +15,7 @@ const StudentRoute = ({role,children}) => {
     },[user])
  
     const isStudent = useSelector(state => state?.userReducer?.userInfo)
-    // console.log('stish', isStudent)
+    console.log('stish', isStudent)
     const isMatched = role.includes(isStudent?.role)
 
     if(isMatched === true){
