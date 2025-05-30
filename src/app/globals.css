@@ -1,10 +1,10 @@
 @import "tailwindcss";
-@import "tailwindcss";
 @plugin "daisyui";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-sans: 'var(--font-libre)';
 }
 
 @theme inline {
@@ -16,7 +16,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #f4f1f1;
+    --background: #fcfcfc;
     --foreground: #211d1d;
   }
 }

@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const CoursBanner = () => {
     return (
-        <section className="flex flex-col md:flex-row items-center justify-center bg-[url('/img/coursBg.jpg')] px-6 md:px-20 pt-12">
-            <div className="max-w-xl text-center md:text-left">
+        <section className="flex relative flex-col md:flex-row items-center bg-no-repeat bg-cover justify-center bg-[url('/img/aboutbg.jpg')] px-6 md:px-20 pt-12">
+            <div className="max-w-xl text-center md:text-left z-30">
                 <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-3.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
                     Build skills with  Online course .
                 </h1>
@@ -21,13 +21,14 @@ const CoursBanner = () => {
                     <div className="w-10 h-10 bg-blue-200 rounded-full"></div>
                 </div>
                 <Image
-                    src="/img/coursPerson.png"
+                    src="/img/brnbg.png"
                     alt="Student"
-                    width={250}
-                    height={250}
-                    className="z-10 object-contain"
+                    width={350}
+                    height={650}
+                    className="z-20 object-contain"
                 />
             </div>
+            <div className="absolute w-full h-full top-0 bg-black/20"></div>
         </section>
     );
 };

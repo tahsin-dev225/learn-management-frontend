@@ -12,7 +12,7 @@ const HomePage = () => {
         <div>
             <Banner/>
             <CourseSection/>
-            <WebDevelopment/>
+            {/* <WebDevelopment/> */}
             <WhyChose/>
             <Teachers/>
             <Testimonials/>

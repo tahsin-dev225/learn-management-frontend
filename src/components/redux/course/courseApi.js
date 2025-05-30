@@ -25,6 +25,13 @@ export const courseApi = apiSlice.injectEndpoints({
                 };
             }
         }),
+        getAllStudent : builder.query({
+            query : (query)=>{
+                return {
+                    url : `/users/all/students`
+                };
+            }
+        }),
         addCourse: builder.mutation({
             query: (info) => {
                 return {
@@ -303,6 +310,7 @@ export const {
     useAddViewMutation,
     useGetProgressDataQuery,
     useGetLast3CourseProgressQuery,
-    useGetCourseCategoryQuery
+    useGetCourseCategoryQuery,
+    useGetAllStudentQuery
 } = courseApi
 

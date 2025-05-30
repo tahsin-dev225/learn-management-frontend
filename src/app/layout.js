@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "@/components/provider/StoreProvider";
 
@@ -11,6 +11,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const libre = Libre_Baskerville({
+  subsets: ['latin'],
+  weight: ['400', '700'], // Available weights
+  variable: '--font-libre',
+})
 
 export const metadata = {
   title: "Learning management",

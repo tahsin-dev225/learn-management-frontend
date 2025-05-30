@@ -10,9 +10,9 @@ const WebDevelopment = () => {
     console.log(data)
 
     return (
-        <section className="py-12 bg-gray-200">
+        <section className="py-12 bg-gray-100">
             <div className="2xl:max-w-[1500px] lg:w-[90%] mx-auto px-6 text-">
-            <h2 className="text-5xl mx-auto text-center font-bold text-gray-800 mb-4">Explore Marketing Courses</h2>
+            <h2 className="text-5xl mx-auto text-center font-bold text-gray-800 mb-4">Explore Marketing <span className='text-blue-500'> Courses</span></h2>
             <p className="text-gray-600 text-center mb-10 mx-auto ">Choose from a variety of high-quality courses to enhance your skills.</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
