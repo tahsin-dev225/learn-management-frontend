@@ -1,10 +1,16 @@
-import { Geist, Geist_Mono, Libre_Baskerville } from "next/font/google";
+import { Geist, Geist_Mono, Libre_Baskerville, Nunito } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "@/components/provider/StoreProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['400'], 
 });
 
 const geistMono = Geist_Mono({
@@ -26,7 +32,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} >
+      <body className={`${geistSans.variable} ${nunito.className} ${geistMono.variable} ${libre.variable} antialiased`} >
         <StoreProvider>
           {children}
         </StoreProvider>

@@ -7,7 +7,7 @@ const WhyChose = () => {
         <section className="w-full relative py-5 bg-white  my-14 md:py-14">
           <div className="max-w-[1600px] lg:w-[80%] mx-auto px-4 md:px-6">
             <div className="gap-6 flex justify-center lg:gap-8 items-center">
-              <div className="mx-auto w-[92%] lg:mr-auto flex items-center justify-center">
+              <div className="mx-auto w-[92%] z-10 lg:mr-auto flex items-center justify-center">
                 <Image
                   src="/img/bnrlm.png"
                   alt="Students in classroom"
@@ -16,7 +16,7 @@ const WhyChose = () => {
                   className="rounded-lg object-cover"
                 />
               </div>
-              <div className="space-y-8 w-full">
+              <div className="space-y-8 z-10 w-full">
                 <div className="space-y-4">
                   <h1 className="text-[44px] font-bold font-serif text-gray-900 leading-tight">
                     Why Choose{" "}

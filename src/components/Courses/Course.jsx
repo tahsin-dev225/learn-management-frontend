@@ -13,9 +13,9 @@ const SingleCourse = ({course}) => {
             </div>
             <div className="p-4 py-6">
                 <div className="flex items-center justify-between">
-                <span className="text-[16px] shadow px-1.5 rounded-sm text-muted-foreground text-blue-500">{course?.category}</span>
+                <span className="text-[16px] shadow px-1.5 italic font-serif rounded-sm text-muted-foreground text-blue-500">{course?.category}</span>
                 </div>
-                <h3 className="text-xl my-3 font-bold mt-2 line-clamp-1">{course?.name}</h3>
+                <h3 className="text-xl my-3 font-semibold  mt-2 line-clamp-2">{course?.name}</h3>
                 <p className="text-sm text-muted-foreground mt-1 line-clamp-2 ">{course?.description} </p>
                 <div className="flex items-center justify-between mt-4">
                 <div className="flex text-blue-800 items-center gap-1">

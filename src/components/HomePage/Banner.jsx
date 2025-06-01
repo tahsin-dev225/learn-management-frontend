@@ -16,7 +16,6 @@ import { useGetAllCourseQuery, useGetAllStudentQuery } from '../redux/course/cou
 const Banner = () => {
     const {data : allStudnet} = useGetAllStudentQuery()
     const {data : allCourse} = useGetAllCourseQuery()
-console.log(allStudnet)
 
 const stats = [
     {

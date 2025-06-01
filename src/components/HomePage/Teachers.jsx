@@ -57,7 +57,7 @@ const Teachers = ()=> {
       <div className=" mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold font-serif text-sky-950/80 mb-4">Our Expert And Top <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>Teachers</span></h2>
+          <h2 className="text-5xl font-bold font-serif text-sky-950 mb-4">Our Expert And Top <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>Teachers</span></h2>
           <p className="text-gray-600 max-w-xl mx-auto">
             Learn from industry professionals who bring real-world experience to every lesson.Choose from quality courses to enhance your skill.
           </p>
@@ -93,10 +93,10 @@ const Teachers = ()=> {
           >
             {teachers.map((teacher) => (
               <SwiperSlide key={teacher.id}>
-                <div className="bg-blue-500 rounded-2xl border-b border-b-gray-300  shadow  hover:shadow-md transition-shadow duration-300 h-full">
+                <div className="bg-blue-400 rounded-2xl border-b border-b-gray-300  shadow  hover:shadow-md transition-shadow duration-300 h-full">
                   {/* Profile Image */}
                   <div className="text-center">
-                        <div className="w-full py-4 bg-blue-500 rounded-lg rounded-bl-4xl rounded-br-none">
+                        <div className="w-full py-4 bg-blue-400 rounded-lg rounded-bl-4xl rounded-br-none">
                             <div className="w-20 h-20 mx-auto mb-4">
                                 <img
                                     src={teacher.image || "/placeholder.svg"}

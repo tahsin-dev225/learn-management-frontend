@@ -226,6 +226,14 @@ export const courseApi = apiSlice.injectEndpoints({
             },
             providesTags : ["courses"]
         }),
+        getPopularEnrolled : builder.query({
+            query : (query)=>{
+                return {
+                    url : `/enrolled/popular`
+                };
+            },
+            providesTags : ["courses"]
+        }),
         getEnrolledStats : builder.query({
             query : (query)=>{
                 return {
@@ -311,6 +319,7 @@ export const {
     useGetProgressDataQuery,
     useGetLast3CourseProgressQuery,
     useGetCourseCategoryQuery,
-    useGetAllStudentQuery
+    useGetAllStudentQuery,
+    useGetPopularEnrolledQuery
 } = courseApi
 

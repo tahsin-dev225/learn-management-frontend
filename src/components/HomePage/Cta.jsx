@@ -21,6 +21,7 @@ const Cta = () => {
                 </div>
             </div>
             <div className="h-full w-full absolute bg-[#e6bdde24]"></div>
+            <div className="size-[390px] overflow-hidden absolute -top-[46%] left-[4%] -z-[20] rounded-full blur-[60px] bg-gradient-to-b  from-sky-300/20 to-indigo-400/80"></div>
         </section>
     );
 };

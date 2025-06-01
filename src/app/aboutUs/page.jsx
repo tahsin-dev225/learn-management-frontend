@@ -34,7 +34,7 @@ const page = () => {
                             <BookOpen className="w-4 h-4" />
                             About Us
                         </div>
-                        <div className="mx-auto text-white font-serif text-center">We belive in skills, building careers, and achieving goals.</div>
+                        <div className="mx-auto text-lg text-white font-serif text-center">We belive in skills, building careers, and achieving goals.</div>
                     </div>
                 </div>
                 <div className="absolute bg-black/70 w-full h-full z-10 top-0"></div>
@@ -158,7 +158,7 @@ const page = () => {
             <MetTeam/>
 
             {/* Values Section */}
-            <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+            <section className="py-24 font-serif bg-gradient-to-b from-white to-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -179,10 +179,10 @@ const page = () => {
                         </div>
 
                         <div className="flex-1">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-300">
+                            <h3 className="text-2xl font-bold font-serif text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-300">
                             Innovation
                             </h3>
-                            <p className="text-gray-600 leading-relaxed">
+                            <p className="text-gray-600 font-serif leading-relaxed">
                             We constantly explore new technologies and teaching methods to improve the learning experience,
                             pushing boundaries to create better educational outcomes.
                             </p>
@@ -191,7 +191,7 @@ const page = () => {
                     </div>
 
                     {/* Inclusivity Card */}
-                    <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-purple-100 relative overflow-hidden">
+                    <div className="group bg-white font-serif rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-purple-100 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-full -mr-16 -mt-16 opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                         <div className="flex items-start space-x-5 relative z-10">
@@ -258,11 +258,11 @@ const page = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-16  px-3.5 lg:w-[85%] 2xl:max-w-[1500px] mx-auto md:py-24">
+            <section className="py-16 font-serif px-3.5 lg:w-[85%] 2xl:max-w-[1500px] mx-auto md:py-24">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="bg-gradient-to-br from-[#6a5eecb6] to-[#432a69c7] rounded-2xl p-8 md:p-12 text-white text-center">
                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Ready to Start Learning?</h2>
-                    <p className="text-xl mb-8 max-w-2xl mx-auto">
+                    <p className="text-xl mb-8 max-w-2xl font- mx-auto">
                     Join thousands of students who are already advancing their careers with our courses.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">

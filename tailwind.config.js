@@ -7,7 +7,7 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['var(--font-libre)'],
+        libre: ['var(--font-libre)', 'sans-serif'],
       },
     },
   },
