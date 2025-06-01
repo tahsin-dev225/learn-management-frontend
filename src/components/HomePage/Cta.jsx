@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Cta = () => {
     return (
-        <section className=" bg-cover relative flex-col lg:flex-row flex justify-center items-center gap-5 bg-[url('/img/cta.jpg')]  backdrop-blur-3xl text-[#feffdd] py-16 mb- px-6 text-center rounded-2xl shadow-lg max-w-[1600px] w-[85%] mx-auto lg:mt-40 my-24">
+        <section className=" bg-cover relative flex-col lg:flex-row flex justify-center items-center gap-5 bg-[url('/img/cta.jpg')]  backdrop-blur-3xl text-[#feffdd] py-16 mb- px-6 text-center rounded-2xl shadow-lg max-w-[1600px] w-[80%] mx-auto lg:mt-40 my-24">
             <div className="hidden md:block z-20 w-full h-full">
                 <Image src='/img/men-work.png' className="absolute z-20 bottom-4 left-[7%] " height={500} width={500} alt="cta"/>
             </div>

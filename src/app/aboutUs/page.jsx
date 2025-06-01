@@ -260,7 +260,7 @@ const page = () => {
             {/* CTA Section */}
             <section className="py-16 font-serif px-3.5 lg:w-[85%] 2xl:max-w-[1500px] mx-auto md:py-24">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="bg-gradient-to-br from-[#6a5eecb6] to-[#432a69c7] rounded-2xl p-8 md:p-12 text-white text-center">
+                <div className="bg-gradient-to-br from-[#3faee2b6] to-[#3f77dec7] rounded-2xl p-8 md:p-12 text-white text-center">
                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Ready to Start Learning?</h2>
                     <p className="text-xl mb-8 max-w-2xl font- mx-auto">
                     Join thousands of students who are already advancing their careers with our courses.
