@@ -104,7 +104,7 @@ const page = () => {
                             </div>
                         </div>
                         <div className="relative h-96 rounded-xl overflow-hidden">
-                            <Image src="/img/aboutUs.jpg" alt="Our journey" fill className="object-cover" />
+                            <Image src="/img/aboutus.jpg" alt="Our journey" fill className="object-cover" />
                         </div>
                     </div>
                 </div>
