@@ -9,6 +9,7 @@ import useFirebase from "@/components/Firebase/useFirebase";
 import { useGetCreatorCourseQuery, useGetEnrolledCourseQuery, useGetLast3CourseProgressQuery, useGetProgressDataQuery, useGetStudentSpendQuery, useGetTopEnrolledQuery, useGetTotalEarningQuery } from "@/components/redux/course/courseApi";
 import { logUser } from "@/components/redux/user/userSlice";
 import StudentRoute from "@/components/routes/StudentRoute";
+import { BadgeCheck, BookOpenCheck, DollarSign, GraduationCap } from "lucide-react";
 import Image from "next/image";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -37,29 +38,46 @@ const page = () => {
         return <div className="flex justify-center items-center w-full min-h-screen">Loading....</div>
     }
 
+    const stats = [
+        {
+            label: 'Enrolled Courses',
+            value: courses?.length,
+            icon: <BookOpenCheck className="w-6 h-6 text-indigo-500" />,
+        },
+        {
+            label: 'Completed Courses',
+            value: 0,
+            icon: <GraduationCap className="w-6 h-6 text-green-500" />,
+        },
+        {
+            label: 'Total Spend',
+            value: studentSpend?.totalSpend,
+            icon: <DollarSign className="w-6 h-6 text-yellow-500" />,
+        },
+        {
+            label: 'Certificates',
+            value: 0,
+            icon: <BadgeCheck className="w-6 h-6 text-blue-500" />,
+        },
+    ];
+
     if(currentUser?.role === 'student'){
         return (
             <StudentRoute role='student'>
                 <div className="p-6">
                     <h1 className="text-3xl font-bold mb-6">Student Dashboard</h1>
 
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-                            <StudentDashCard title="Enrolled Courses" value={courses?.length} />
-                            <StudentDashCard title="Completed Courses" value="2" />
-                            <StudentDashCard title="Total Spend" value={studentSpend?.totalSpend} />
-                            <StudentDashCard title="Certificates" value="2" />
-                        </div>
-                        {/* <StudentContent/> */}
+                        <StudentContent stats={stats} />
 
-                        <div className="mb-8">
-                        <h2 className="text-xl font-semibold mb-4">My Courses</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {
-                                lastThreeProgress?.map(((progressCourse,idx)=>
-                                    <StuCourseCard key={idx} title={progressCourse?.courseName} id={progressCourse?.courseId} progress={progressCourse?.progressPercent} />
-                                ))    
-                            }
-                        </div>
+                        <div className="my-8 mb-14">
+                            <h2 className="text-xl font-semibold mb-4">My Courses</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                {
+                                    lastThreeProgress?.map(((progressCourse,idx)=>
+                                        <StuCourseCard key={idx} title={progressCourse?.courseName} id={progressCourse?.courseId} progress={progressCourse?.progressPercent} />
+                                    ))    
+                                }
+                            </div>
                         </div>
 
                         <div>

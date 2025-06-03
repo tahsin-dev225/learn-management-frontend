@@ -1,37 +1,15 @@
 'use client';
 import { BookOpenCheck, GraduationCap, BadgeCheck, DollarSign } from 'lucide-react';
 
-const StudentContent = () => {
-    const stats = [
-  {
-    label: 'Enrolled Courses',
-    value: 1,
-    icon: <BookOpenCheck className="w-6 h-6 text-indigo-500" />,
-  },
-  {
-    label: 'Completed Courses',
-    value: 2,
-    icon: <GraduationCap className="w-6 h-6 text-green-500" />,
-  },
-  {
-    label: 'Total Spend',
-    value: 2500,
-    icon: <DollarSign className="w-6 h-6 text-yellow-500" />,
-  },
-  {
-    label: 'Certificates',
-    value: 2,
-    icon: <BadgeCheck className="w-6 h-6 text-blue-500" />,
-  },
-];
+const StudentContent = ({stats}) => {
+    
     return (
     <div className="p-6">
-      <h2 className="text-2xl font-semibold mb-6">🎓 Student Dashboard</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat, idx) => (
           <div
             key={idx}
-            className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow hover:shadow-md transition"
+            className="flex items-center hover:-translate-y-2 transition-transform duration-300 gap-4 p-6 bg-white rounded-2xl shadow hover:shadow-md "
           >
             <div className="bg-gray-100 p-3 rounded-xl">
               {stat.icon}
