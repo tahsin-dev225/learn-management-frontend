@@ -15,6 +15,7 @@ import { CgProfile } from "react-icons/cg";
 import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
 import { IoMdLogOut, IoMdPersonAdd } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
@@ -87,23 +88,23 @@ export default function Sidebar() {
         {
           user &&
           <Drawer
-          open={isOpenDrawer}
-          onClose={toggleDrawer}
-          direction='right'
-          className=''
-          >
-              <div className="flex justify-between flex-col h-full items-center">
-                  <div className="w-full justify-start my-2.5 mx-1">
-                      <button onClick={toggleDrawer} className="text-3xl font-bold cursor-pointer text-red-400 p-1.5">x </button>
-                      <div className="">
-                          <Image className="my-6 mx-auto rounded-full" src={`/img/userDef.png`} width={80} height={80} alt="user" />
-                          <p className="text-center text-slate-800">Name : {isStudent?.name}</p>
-                      </div>
-                  </div>
-                  
-                  <button onClick={()=> logOut()} className="btn w-[85%] mx-auto btn-primary my-8 text-white btn-sm"><IoMdLogOut />Log out</button>
-              </div>
-          </Drawer>
+                open={isOpenDrawer}
+                onClose={toggleDrawer}
+                direction='right'
+                className=' h-[45vh]! rounded bg-[#28205b]!'
+                >
+                    <div className="flex justify-between flex-col h-full items-center">
+                        <div className="w-full justify-start my-2.5 mx-1">
+                            <button onClick={toggleDrawer} className="text-3xl font-bold cursor-pointer text-red-200 p-1.5"> <RxCross2 /></button>
+                            <div className="">
+                                <Image className="my-6 mx-auto rounded-full" src={`/img/userDef.png`} width={80} height={80} alt="user" />
+                                <p className="text-center text-slate-100">Name : {isStudent?.name}</p>
+                            </div>
+                        </div>
+                        
+                        <button onClick={()=> logOut()} className="btn w-[85%] mx-auto btn-primary my-7 text-white btn-sm"><IoMdLogOut />Log out</button>
+                    </div>
+                </Drawer>
           }
     </div>
   );

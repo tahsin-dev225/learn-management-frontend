@@ -7,7 +7,7 @@ const WhyChose = () => {
         <section className="w-full relative py-5 bg-white  my-14 md:py-14">
           <div className="max-w-[1600px] lg:w-[80%] mx-auto px-4 md:px-6">
             <div className="gap-6 flex justify-center lg:gap-8 items-center">
-              <div className="mx-auto w-[92%] z-10 lg:mr-auto flex items-center justify-center">
+              <div className="mx-auto w-[92%] hidden z-10 lg:mr-auto lg:flex items-center justify-center">
                 <Image
                   src="/img/bnrlm.png"
                   alt="Students in classroom"

@@ -1,5 +1,6 @@
 "use client"
 import StuCourseCard from "@/components/Dashboard/StuCourseCard";
+import StudentContent from "@/components/Dashboard/StudentContent";
 import StudentDashCard from "@/components/Dashboard/StudentDashCard";
 import TeacherBarChart from "@/components/Dashboard/TeacherBarChart";
 import TeacherCourseCard from "@/components/Dashboard/TeacherCourseCard";
@@ -43,11 +44,12 @@ const page = () => {
                     <h1 className="text-3xl font-bold mb-6">Student Dashboard</h1>
 
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-                        <StudentDashCard title="Enrolled Courses" value={courses?.length} />
-                        <StudentDashCard title="Completed Courses" value="2" />
-                        <StudentDashCard title="Total Spend" value={studentSpend?.totalSpend} />
-                        <StudentDashCard title="Certificates" value="2" />
+                            <StudentDashCard title="Enrolled Courses" value={courses?.length} />
+                            <StudentDashCard title="Completed Courses" value="2" />
+                            <StudentDashCard title="Total Spend" value={studentSpend?.totalSpend} />
+                            <StudentDashCard title="Certificates" value="2" />
                         </div>
+                        {/* <StudentContent/> */}
 
                         <div className="mb-8">
                         <h2 className="text-xl font-semibold mb-4">My Courses</h2>

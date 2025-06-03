@@ -158,9 +158,9 @@ const page = () => {
             <MetTeam/>
 
             {/* Values Section */}
-            <section className="py-24 font-serif bg-gradient-to-b from-white to-gray-50">
+            <section className="md:py-24 py-12 font-serif bg-gradient-to-b from-white to-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-16">
+                    <div className="text-center max-w-3xl mx-auto mb-9 md:mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                             Our <span className='bg-gradient-to-r font-serif from-blue-600 to-purple-600 bg-clip-text text-transparent'>Values</span>
                         </h2>
@@ -258,7 +258,7 @@ const page = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-16 font-serif px-3.5 lg:w-[85%] 2xl:max-w-[1500px] mx-auto md:py-24">
+            <section className="py-16 font-serif md:px-3.5  lg:w-[85%] 2xl:max-w-[1500px] mx-auto md:py-24">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="bg-gradient-to-br from-[#3faee2b6] to-[#3f77dec7] rounded-2xl p-8 md:p-12 text-white text-center">
                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Ready to Start Learning?</h2>

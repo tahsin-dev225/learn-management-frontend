@@ -53,7 +53,7 @@ const teachers = [
 
 const Teachers = ()=> {
   return (
-    <section className="py-10 relative mx-auto w-[80%] px-4 bg-[#f5f8fb00]">
+    <section className="py-10 relative mx-auto md:w-[80%] px-4 bg-[#f5f8fb00]">
       <div className=" mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

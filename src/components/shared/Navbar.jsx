@@ -58,7 +58,7 @@ const Navbar = () => {
                     {user && <Link className="mx- font-serif" href="/dashboard">Dashboard</Link>}
                 </ul>
                 </div>
-                <Link href='/' className="mx-3 bg-white shadow- rounded px-1.5 py-0.5">
+                <Link href='/' className="md:mx-3 bg-white shadow- rounded px-1.5 py-0.5">
                     <Image className="rounded" src='/img/logo.png' width={160} height={40} alt="logo" />
                 </Link>
             </div>
