@@ -13,6 +13,7 @@ import { BadgeCheck, BookOpenCheck, DollarSign, GraduationCap } from "lucide-rea
 import Image from "next/image";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { PiStudentFill } from "react-icons/pi";
 
 const page = () => {
     const {user} = useFirebase()
@@ -65,12 +66,12 @@ const page = () => {
         return (
             <StudentRoute role='student'>
                 <div className="p-6">
-                    <h1 className="text-3xl font-bold mb-6">Student Dashboard</h1>
+                    <h1 className="text-2xl lg:text-5xl flex gap-4 justify-start items-center font-poppins font-bold mb-6"><span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Student </span> Dashboard <PiStudentFill className="ml-2" /></h1>
 
                         <StudentContent stats={stats} />
 
                         <div className="my-8 mb-14">
-                            <h2 className="text-xl font-semibold mb-4">My Courses</h2>
+                            <h2 className="text-xl font-bold mb-4">My Courses</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                 {
                                     lastThreeProgress?.map(((progressCourse,idx)=>

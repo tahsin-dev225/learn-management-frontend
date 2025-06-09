@@ -40,125 +40,8 @@ const page = () => {
                 <div className="absolute bg-black/70 w-full h-full z-10 top-0"></div>
             </section>
 
-            
-            {/* Our Story Section */}
-            <section className="py-16  px-3.5 lg:w-[80%] 2xl:max-w-[1500px] mx-auto md:py-24">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h2 className="text-4xl font-serif mx-auto md:text-5xl text-center font-bold  text-gray-900 mb-10 ">Our <span className="text-blue-600">Story</span></h2>
-                            <div className="">
-                                {/* Content Side */}
-                                <div className="space-y-8">
-                                    {/* Story Card 1 */}
-                                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                                        <div className="flex items-start gap-4">
-                                            <div className="bg-blue-100 p-3 rounded-xl">
-                                            <Calendar className="w-6 h-6 text-blue-600" />
-                                            </div>
-                                            <div>
-                                            <h3 className="text-xl font-semibold text-gray-900 mb-2">Founded in 2018</h3>
-                                            <p className="text-gray-600 leading-relaxed">
-                                                Our journey began with a simple idea: to create a platform where anyone could access
-                                                <span className="text-red-500 font-medium"> high-quality educational content</span> at an affordable
-                                                price.
-                                            </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Story Card 2 */}
-                                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                                        <div className="flex items-start gap-4">
-                                            <div className="bg-sky-100 p-3 rounded-xl">
-                                            <TrendingUp className="w-6 h-6 text-sky-600" />
-                                            </div>
-                                            <div>
-                                            <h3 className="text-xl font-semibold text-gray-900 mb-2">Continuous Growth</h3>
-                                            <p className="text-gray-600 leading-relaxed">
-                                                What started as a small collection of programming courses has grown into a
-                                                <span className="text-blue-600 font-medium"> comprehensive library</span> spanning technology,
-                                                business, design, and personal development.
-                                            </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Story Card 3 */}
-                                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                                        <div className="flex items-start gap-4">
-                                            <div className="bg-red-100 p-3 rounded-xl">
-                                            <Globe2 className="w-6 h-6 text-red-500" />
-                                            </div>
-                                            <div>
-                                            <h3 className="text-xl font-semibold text-gray-900 mb-2">Global Impact</h3>
-                                            <p className="text-gray-600 leading-relaxed">
-                                                Today, we're proud to have helped{" "}
-                                                <span className="text-red-500 font-medium">thousands of students worldwide</span>
-                                                achieve their learning goals and advance their careers.
-                                            </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="relative h-96 rounded-xl overflow-hidden">
-                            <Image src="/img/aboutus.jpg" alt="Our journey" fill className="object-cover" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Our Mission Section */}
-            <section className="py-12  px-3.5 lg:w-[80%] 2xl:max-w-[1500px] mx-auto bg-primary/5 md:py-24">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                    <h2 className="text-3xl font-bold tracking-tight font-serif sm:text-5xl">Our <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>Mission</span> </h2>
-                    <p className="mt-4 font-serif text-gray-600">
-                    We're on a mission to revolutionize online education through technology and innovation skills, building careers.
-                    </p>
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-8">
-                    <div className="bg-white p-8 rounded-xl shadow-sm">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                        <BookOpen className="h-6 w-6 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-4">Quality Content</h3>
-                    <p className="text-gray-600">
-                        We partner with industry experts to create courses that are comprehensive, up-to-date, and practical.
-                    </p>
-                    </div>
-
-                    <div className="bg-white p-8 rounded-xl shadow-sm">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                        <Globe className="h-6 w-6 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-4">Global Access</h3>
-                    <p className="text-gray-600">
-                        We believe education should be accessible to everyone, regardless of location or background.
-                    </p>
-                    </div>
-
-                    <div className="bg-white p-8 rounded-xl shadow-sm">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                        <Award className="h-6 w-6 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-4">Student Success</h3>
-                    <p className="text-gray-600">
-                        Our ultimate goal is to help our students achieve their personal and professional goals.
-                    </p>
-                    </div>
-                </div>
-                </div>
-            </section>
-
-            {/* Team Section */}
-            <MetTeam/>
-
             {/* Values Section */}
-            <section className="md:py-24 py-12 font-serif bg-gradient-to-b from-white to-gray-50">
+            <section className="md:py-24 py-12 font-poppins bg-gradient-to-b from-white to-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-9 md:mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -257,8 +140,124 @@ const page = () => {
                 </div>
             </section>
 
+            {/* Our Story Section */}
+            <section className="py-16  px-3.5 lg:w-[80%] 2xl:max-w-[1500px] mx-auto md:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 className="text-4xl font-serif mx-auto md:text-5xl text-center font-bold  text-gray-900 mb-10 ">Our <span className="text-blue-600">Story</span></h2>
+                            <div className="">
+                                {/* Content Side */}
+                                <div className="space-y-8">
+                                    {/* Story Card 1 */}
+                                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                                        <div className="flex items-start gap-4">
+                                            <div className="bg-blue-100 p-3 rounded-xl">
+                                            <Calendar className="w-6 h-6 text-blue-600" />
+                                            </div>
+                                            <div>
+                                            <h3 className="text-xl font-semibold text-gray-900 mb-2">Founded in 2018</h3>
+                                            <p className="text-gray-600 leading-relaxed">
+                                                Our journey began with a simple idea: to create a platform where anyone could access
+                                                <span className="text-red-500 font-medium"> high-quality educational content</span> at an affordable
+                                                price.
+                                            </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Story Card 2 */}
+                                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                                        <div className="flex items-start gap-4">
+                                            <div className="bg-sky-100 p-3 rounded-xl">
+                                            <TrendingUp className="w-6 h-6 text-sky-600" />
+                                            </div>
+                                            <div>
+                                            <h3 className="text-xl font-semibold text-gray-900 mb-2">Continuous Growth</h3>
+                                            <p className="text-gray-600 leading-relaxed">
+                                                What started as a small collection of programming courses has grown into a
+                                                <span className="text-blue-600 font-medium"> comprehensive library</span> spanning technology,
+                                                business, design, and personal development.
+                                            </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Story Card 3 */}
+                                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                                        <div className="flex items-start gap-4">
+                                            <div className="bg-red-100 p-3 rounded-xl">
+                                            <Globe2 className="w-6 h-6 text-red-500" />
+                                            </div>
+                                            <div>
+                                            <h3 className="text-xl font-semibold text-gray-900 mb-2">Global Impact</h3>
+                                            <p className="text-gray-600 leading-relaxed">
+                                                Today, we're proud to have helped{" "}
+                                                <span className="text-red-500 font-medium">thousands of students worldwide</span>
+                                                achieve their learning goals and advance their careers.
+                                            </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="relative h-96 rounded-xl overflow-hidden">
+                            <Image src="/img/aboutus.jpg" alt="Our journey" fill className="object-cover" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Our Mission Section */}
+            <section className="py-12  px-3.5 lg:w-[80%] 2xl:max-w-[1500px] mx-auto bg-primary/5 md:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center max-w-2xl mx-auto mb-16">
+                    <h2 className="text-3xl font-bold tracking-tight font-poppins sm:text-5xl">Our <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>Mission</span> </h2>
+                    <p className="mt-4 font-poppins text-gray-600">
+                    We're on a mission to revolutionize online education through technology and innovation skills, building careers.
+                    </p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-8">
+                    <div className="bg-white p-8 rounded-xl shadow-sm">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <BookOpen className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-4">Quality Content</h3>
+                    <p className="text-gray-600">
+                        We partner with industry experts to create courses that are comprehensive, up-to-date, and practical.
+                    </p>
+                    </div>
+
+                    <div className="bg-white p-8 rounded-xl shadow-sm">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <Globe className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-4">Global Access</h3>
+                    <p className="text-gray-600">
+                        We believe education should be accessible to everyone, regardless of location or background.
+                    </p>
+                    </div>
+
+                    <div className="bg-white p-8 rounded-xl shadow-sm">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <Award className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-4">Student Success</h3>
+                    <p className="text-gray-600">
+                        Our ultimate goal is to help our students achieve their personal and professional goals.
+                    </p>
+                    </div>
+                </div>
+                </div>
+            </section>
+
+            {/* Team Section */}
+            <MetTeam/>
+
             {/* CTA Section */}
-            <section className="py-16 font-serif md:px-3.5  lg:w-[85%] 2xl:max-w-[1500px] mx-auto md:py-24">
+            <section className="py-16 font-poppins md:px-3.5  lg:w-[85%] 2xl:max-w-[1500px] mx-auto md:py-24">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="bg-gradient-to-br from-[#3faee2b6] to-[#3f77dec7] rounded-2xl p-8 md:p-12 text-white text-center">
                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Ready to Start Learning?</h2>

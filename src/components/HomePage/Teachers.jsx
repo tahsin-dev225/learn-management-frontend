@@ -56,8 +56,8 @@ const Teachers = ()=> {
     <section className="py-10 relative mx-auto md:w-[80%] px-4 bg-[#f5f8fb00]">
       <div className=" mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold font-serif text-sky-950 mb-4">Our Expert And Top <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>Teachers</span></h2>
+        <div className="text-center mb-10 lg:mb-16">
+          <h2 className="sm:text-5xl text-3xl font-bold font-poppins text-black mb-4">Our Expert And Top <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Teachers</span></h2>
           <p className="text-gray-600 max-w-xl mx-auto">
             Learn from industry professionals who bring real-world experience to every lesson.Choose from quality courses to enhance your skill.
           </p>
@@ -86,6 +86,10 @@ const Teachers = ()=> {
               },
               1024: {
                 slidesPerView: 3,
+                spaceBetween: 24,
+              },
+              1444: {
+                slidesPerView: 4,
                 spaceBetween: 24,
               },
             }}

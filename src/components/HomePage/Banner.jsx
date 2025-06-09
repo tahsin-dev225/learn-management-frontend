@@ -86,13 +86,13 @@ const stats = [
       //   </div>
       // </section>
 
-      <section className="w-full overflow-hidden overflow- relative flex bg-cover bg-center bg-[url('/img/newbnr.jpg')]  justify-center md:min-h-screen max-w-[1600px] mx-auto lg:min-h-[95vh] ">
-          <div className="flex flex-col-reverse z-40 py-3 lg:py-6 px-5 lg:px-0 lg:w-[87%] mx-auto md:flex-row items-center gap-4 lg:gap-12">
+      <section className="w-full overflow-hidden overflow- relative flex bg-cover bg-center bg-[url('/img/newbnr.jpg')]  justify-center md:min-h-screen  mx-auto lg:min-h-[95vh] ">
+          <div className="flex max-w-[1600px] flex-col-reverse z-40 py-3 lg:py-6 px-5 lg:px-0 lg:w-[87%] mx-auto md:flex-row items-center gap-4 lg:gap-12">
            
 
             <div className="flex flex-col justify-center  w-full">
               <div className="">
-                <h1 className="text-5xl lg:text-7xl font-serif font-bold mb-3 leading-tight">
+                <h1 className="text-5xl lg:text-7xl font-poppins font-bold mb-3 leading-tight">
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Learn</span> Without Limits
                 </h1>
 
@@ -137,7 +137,7 @@ const stats = [
           <div className="size-[30px] overflow-hidden absolute top-[46%] left-[47%] -z-[0] rounded-full bg-gradient-to-b border-sky-800 from-sky-300/20 to-indigo-400/80"></div>
           <div className="size-[50px] overflow-hidden absolute top-[84%] right-[34%] -z-[0] rounded-full bg-gradient-to-b border-sky-800 from-sky-300/20 to-indigo-400/80"></div>
 
-          <div className="size-[550px] overflow-hidden absolute bottom-[3%] -right-[2%] -z-[0] rounded-full blur-[90px] bg-gradient-to-b  from-sky-300/20 to-indigo-400/80"></div>
+          <div className="size-[550px] overflow-hidden absolute bottom-[3%] -right-[2%] -z-[0] rounded-full blur-[290px] bg-gradient-to-b  from-sky-300/20 to-indigo-400/80"></div>
       </section>
     );
 };

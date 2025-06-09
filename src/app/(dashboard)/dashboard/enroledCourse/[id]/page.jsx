@@ -49,12 +49,12 @@ const page = () => {
                             <div className="w-full py-5">
                                 <div className="">
                                     <h1 className="text-lg lg:text-2xl font-bold">Name : {course?.name}</h1>
-                                    <p className="text-gray-400 mt-2">Description : {course?.description}</p>
+                                    <p className="text-gray-600 mt-2">Description : {course?.description}</p>
                                 </div>
                             </div>
                         </div>
                         <div className="lg:min-w-96 rounded-xl min-h-screen bg-[#eae1e1]">
-                            <div className="bg-[#171717] rounded-t-xl py-4 px-4">
+                            <div className="bg-[#2f49ca] rounded-t-xl py-4 px-4">
                                 <h1 className="text-lg font-semibold text-gray-50">Course Content</h1>
                                 <p className="text-gray-300 font-medium text-[15px]">{lessons?.length} Lessons</p>
                             </div>

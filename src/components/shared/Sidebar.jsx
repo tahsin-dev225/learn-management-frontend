@@ -20,8 +20,8 @@ import { RxCross2 } from "react-icons/rx";
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
-  const isOpenStyle = "px-3 rounded-lg bg-black/25 text-gray-100 curson-pointer my-3 py-1 pr-2 flex gap-2 items-center transition-all delay-200 font-medium hover:text-[17px]  font-mono"
-  const noOpen = "my-1 px-2 font-semibold text-2xl font-mono"
+  const isOpenStyle = "px-1  rounded-lg text-gray-400  curson-pointer my-2 py-1 pr-2 flex gap-2 items-center transition-all delay-200 font-medium hover:text-[18px]  font-mono"
+  const noOpen = "my-1 px-2 py-1 rounded font-semibold text-2xl font-mono"
 
   const pathName = usePathname();
   const {user,logOut} = useFirebase()
@@ -50,28 +50,28 @@ export default function Sidebar() {
   }
 
   return (
-    <div className={`lg:min-h-screen z-30 fixed bottom-0 w-full overflow-y-hidden lg:sticky bg-[#1a1d4f]  text-white ${isOpen ? "lg:max-w-[250px] lg:min-w-60 " : "lg:w-min px-1.5"} transition-all duration-700 justify-between flex flex-col`}>
+    <div className={`lg:min-h-screen z-30  fixed bottom-0 w-full overflow-y-hidden lg:sticky bg-[#1a1d4f]  text-white ${isOpen ? "lg:max-w-[250px] lg:min-w-60 " : "lg:w-min px-1.5"} transition-all duration-700 justify-between flex flex-col`}>
       {/* <button
         className="mb-2 mt-2 justify-end p-1 text-xl focus:outline-none hidden md:flex"
         onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? "✖" : "☰"}
       </button> */}
       <div className="">
-        <div className="px-3 hidden lg:block border-b border-b-fuchsia-400/30 bg-[#3740563b] backdrop-blur-2xl py-4">
-          <Image src="/img/logo.png" height={50} width={150} alt="logo" />
+        <div className="px-3 hidden lg:block border-r border-r-fuchsia-400/30 backdrop-blur-2xl py-5">
+          <Image src="/img/learnlogo.png" className="bg-white px-2.5 rounded-sm pr-5 mx-auto" height={50} width={190} alt="logo" />
         </div>
         {
           isOpen 
         }
-        <div className="px-2.5 py-2.5 flex lg:flex-col flex-row justify-evenly">
-          <Link href="/dashboard" className={ `${isOpen ? isOpenStyle : noOpen} ${pathName === "/dashboard" ? "bg-sky-600" : ""}`}><LuLayoutDashboard/><span className={isOpen ? '': 'hidden'}>Dashboard</span> </Link>
+        <div className="px-2.5 py-2.5 flex  lg:flex-col flex-row justify-evenly">
+          <Link href="/dashboard" className={ `${isOpen ? isOpenStyle : noOpen} ${pathName === "/dashboard" ? "text-white text-[18px]" : ""}`}><LuLayoutDashboard/><span className={isOpen ? '': 'hidden'}>Dashboard</span> </Link>
 
-          {isStudent?.role === 'teacher' && <Link href="/dashboard/addCourse" className={`${isOpen ? isOpenStyle : noOpen} ${pathName === "/dashboard/addCourse" ? "bg-sky-600" : ""}` }><MdAddToPhotos/><span className={isOpen ? '': 'hidden'}>Add Course</span> </Link>}
-          {isStudent?.role === 'teacher' && <Link href="/dashboard/manageCourse" className={`${isOpen ? isOpenStyle : noOpen} ${pathName === "/dashboard/manageCourse" ? "bg-sky-600" : ""}` }><GrVmMaintenance/><span className={isOpen ? '': 'hidden'}>Manage Course</span> </Link>}
+          {isStudent?.role === 'teacher' && <Link href="/dashboard/addCourse" className={`${isOpen ? isOpenStyle : noOpen} ${pathName === "/dashboard/addCourse" ? "text-white text-[18px]" : ""}` }><MdAddToPhotos/><span className={isOpen ? '': 'hidden'}>Add Course</span> </Link>}
+          {isStudent?.role === 'teacher' && <Link href="/dashboard/manageCourse" className={`${isOpen ? isOpenStyle : noOpen} ${pathName === "/dashboard/manageCourse" ? "text-white text-[18px]" : ""}` }><GrVmMaintenance/><span className={isOpen ? '': 'hidden'}>Manage Course</span> </Link>}
 
-          {isStudent?.role === 'student' && <Link href="/dashboard/enroledCourse" className={`${isOpen ? isOpenStyle : noOpen} ${pathName === "/dashboard/enroledCourse" ? "bg-sky-600" : ""}` }><FaBoxOpen/><span className={isOpen ? '': 'hidden'}>Enrolled Course</span> </Link>}
+          {isStudent?.role === 'student' && <Link href="/dashboard/enroledCourse" className={`${isOpen ? isOpenStyle : noOpen} ${pathName === "/dashboard/enroledCourse" ? "text-white text-[18px]" : ""}` }><FaBoxOpen/><span className={isOpen ? '': 'hidden'}>Enrolled Course</span> </Link>}
 
-          <div className="divider-vertical hidden lg:block w-[97%] h-[1px] bg-gray-400 my-6"></div>
+          <div className="divider-vertical hidden  w-[97%] h-[1px] bg-gray-400 my-6"></div>
 
           <Link href="/" className={ isOpen ? isOpenStyle : noOpen }><FaHome/><span className={isOpen ? '': 'hidden'}>Home</span> </Link>
           {

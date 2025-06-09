@@ -64,7 +64,7 @@ const MetTeam = () => {
       <div className=" mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className={`text-5xl font-bold font-serif text-sky-950 mb-4 ${nunito.className}`}>Met Our <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>Teamate .</span></h2>
+          <h2 className={`text-3xl lg:text-6xl font-bold font-serif text-sky-950 mb-4 ${nunito.className}`}>Met Our <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>Teamate .</span></h2>
           <p className={`text-gray-600 max-w-xl font-libre mx-auto ${nunito.className}`}>
             Learn from industry professionals who bring real-world experience to every lesson.Choose from quality courses to enhance your skill.
           </p>

@@ -59,7 +59,7 @@ const Testimonials = ()=> {
             <Star className="w-4 h-4 fill-current" />
             Student Success Stories
           </div>
-          <h2 className="text-5xl md:text-6xl font-serif font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent mb-6">
+          <h2 className="text-3xl md:text-6xl font-serif font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent mb-6">
             What Our{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Students</span>{" "}
             Say

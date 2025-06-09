@@ -1,5 +1,6 @@
 "use client"
 
+import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,13 +11,13 @@ const Cta = () => {
                 <Image src='/img/men-work.png' className="absolute z-20 bottom-4 left-[7%] " height={500} width={500} alt="cta"/>
             </div>
             <div className="w-full z-40">
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold mb-4">Start Your <span className='text-red-400'> Learning</span> Journey Today!</h2>
+                <h2 className="text-3xl sm:text-4xl font-roboto font-bold mb-4">Start Your  Learning Journey<span className='text-[#e95151] '> Today!</span> </h2>
                 <p className="text-base sm:text-lg mb-6 max-w-2xl mx-auto">
                     Join thousands of students learning new skills, building careers, and achieving goals. Get lifetime access to top-quality courses.
                 </p>
-                <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <Link href='/courses' className="bg-white text-primary font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">
-                    Explore Courses
+                <div className="flex  justify-center gap-4">
+                    <Link href='/courses' className="bg-[#f1f1f1] text-primary flex items-center gap-1.5 justify-center font-semibold px-6 py-2 rounded-4xl hover:bg-gray-100 transition">
+                    Explore Courses <ChevronRight/>
                     </Link>
                 </div>
             </div>

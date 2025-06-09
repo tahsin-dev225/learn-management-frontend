@@ -23,7 +23,7 @@ const page = () => {
                 <div className="min-h-screen bg-[#f6f6f6]">
                     <div className="container mx-auto py-10 px-4 md:px-6">
                         <header className="mb-10">
-                        <h1 className="text-3xl font-bold tracking-tight mb-2">My Learning Journey</h1>
+                        <h1 className="text-3xl lg:text-5xl font-bold tracking-tight mb-2">My <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Learning Journey</span></h1>
                         <p className="text-slate-500">Continue your education with these enrolled courses</p>
                         </header>
 
@@ -36,7 +36,7 @@ const page = () => {
                             >
                             <div className="md:flex">
                                 {/* Course Image - Larger on mobile, side column on desktop */}
-                                <div className="md:w-1/3 lg:w-5/12 relative">
+                                <div className="sm:w-1/3 md:w-8/12 lg:w-5/12 relative">
                                     <div className="relative aspect-video md:aspect-auto md:h-full">
                                         <Image src={course?.courseId?.image} alt={course?.courseId?.name} fill sizes="350" className="object-" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-blue-300/20 to-transparent md:bg-gradient-to-r" />

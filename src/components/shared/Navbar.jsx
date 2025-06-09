@@ -51,22 +51,22 @@ const Navbar = () => {
                 </div>
                 <ul
                     tabIndex={0}
-                    className="menu menu-sm text-gray-200 dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                    className="menu menu-sm font-poppins text-gray-200 dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                     {
-                        navItems?.map((item,idx) =><Link key={idx} className="my-2 font-serif" href={item.path}>{item?.title}</Link>)
+                        navItems?.map((item,idx) =><Link key={idx} className="my-2 font-" href={item.path}>{item?.title}</Link>)
                     }
-                    {user && <Link className="mx- font-serif" href="/dashboard">Dashboard</Link>}
+                    {user && <Link className="mx- " href="/dashboard">Dashboard</Link>}
                 </ul>
                 </div>
                 <Link href='/' className="md:mx-3 bg-white shadow- rounded px-1.5 py-0.5">
-                    <Image className="rounded" src='/img/logo.png' width={160} height={40} alt="logo" />
+                    <Image className="rounded" src='/img/learnlogo.png' width={170} height={40} alt="logo" />
                 </Link>
             </div>
-            <div className="navbar-start justify-center hidden text-[#704c4c] lg:flex">
+            <div className="navbar-start font-poppins justify-center hidden text-[#644f4f] lg:flex">
                 {
-                    navItems?.map((item,idx) =><Link key={idx} className="mx-3 font-serif" href={item.path}>{item?.title}</Link>)
+                    navItems?.map((item,idx) =><Link key={idx} className="mx-3 " href={item.path}>{item?.title}</Link>)
                 }
-                {user && <Link className="mx-3 font-serif" href="/dashboard">Dashboard</Link>}
+                {user && <Link className="mx-3 " href="/dashboard">Dashboard</Link>}
                 
             </div>
             <div className="navbar-end">
